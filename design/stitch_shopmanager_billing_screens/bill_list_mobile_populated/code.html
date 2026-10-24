@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "tertiary": "#692c00", "on-primary-fixed-variant": "#004d64", "secondary-fixed-dim": "#80d5cb", "on-primary": "#ffffff", "on-secondary-container": "#006f67", "on-primary-fixed": "#001f2a", "error-container": "#ffdad6", "background": "#f8f9ff", "on-primary-container": "#93d3ef", "surface-container-high": "#dce9ff", "on-secondary-fixed": "#00201d", "primary-fixed-dim": "#90cfec", "on-tertiary": "#ffffff", "secondary-fixed": "#9cf2e8", "primary-container": "#0d5c75", "on-surface-variant": "#40484c", "on-background": "#0d1c2e", "surface-variant": "#d5e3fc", "on-secondary": "#ffffff", "surface-container": "#e6eeff", "on-tertiary-fixed-variant": "#763300", "surface-container-highest": "#d5e3fc", "on-tertiary-container": "#ffbb97", "on-surface": "#0d1c2e", "inverse-surface": "#233144", "secondary-container": "#99efe5", "on-error": "#ffffff", "on-error-container": "#93000a", "surface-container-low": "#eff4ff", "on-tertiary-fixed": "#331200", "surface-tint": "#1e667f", "inverse-on-surface": "#eaf1ff", "error": "#ba1a1a", "tertiary-fixed-dim": "#ffb68e", "on-secondary-fixed-variant": "#00504a", "tertiary-container": "#8d3e00", "outline-variant": "#bfc8cd", "surface": "#f8f9ff", "inverse-primary": "#90cfec", "primary": "#004357", "outline": "#70787d", "surface-bright": "#f8f9ff", "tertiary-fixed": "#ffdbca", "secondary": "#006a63", "primary-fixed": "#bde9ff", "surface-container-lowest": "#ffffff", "surface-dim": "#ccdbf3" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "gutter": "1rem", "margin-desktop": "1.5rem", "space-xs": "0.25rem", "space-lg": "1rem", "space-md": "0.75rem", "margin": "1rem", "gutter-desktop": "1.25rem", "space-xl": "1.5rem", "space-sm": "0.5rem" }, "fontFamily": { "title-sm": ["Inter"], "financial-tabular": ["Inter"], "label-md": ["Inter"], "headline-md": ["Inter"], "body-md": ["Inter"], "financial-display": ["Inter"], "body-lg": ["Inter"], "headline-lg-mobile": ["Inter"], "label-sm": ["Inter"], "headline-lg": ["Inter"], "headline-sm": ["Inter"], "body-sm": ["Inter"], "title-md": ["Inter"] }, "fontSize": { "title-sm": ["13px", { "lineHeight": "18px", "fontWeight": "600" }], "financial-tabular": ["13px", { "lineHeight": "18px", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-md": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "financial-display": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-lg": ["15px", { "lineHeight": "22px", "fontWeight": "400" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "600" }], "headline-lg": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "title-md": ["15px", { "lineHeight": "20px", "fontWeight": "600" }] } } } }</script><style>@layer base { html, body { width: 100%; margin: 0; padding: 0; } body { overscroll-behavior-y: none; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } } ::-webkit-scrollbar { display: none; }</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body-md text-body-md min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-14 px-margin flex items-center justify-between"><h1 class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">Billing</h1><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="bg-surface min-h-screen w-full pt-14 pb-safe flex flex-col"><div class="flex flex-col w-full pb-20">
+<!-- Search Section -->
+<div class="px-margin pt-space-md pb-space-sm bg-surface">
+<div class="relative flex items-center w-full">
+<span class="material-symbols-outlined absolute left-3 text-outline text-[18px] pointer-events-none select-none">search</span>
+<input class="w-full h-9 pl-9 pr-3 bg-surface-container-lowest rounded-lg font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none shadow-sm" id="bill-search-input" placeholder="Search by bill number or customer name" type="text"/>
+</div>
+</div>
+<!-- Filter Chips with Counts -->
+<div class="px-margin py-space-sm flex items-center gap-2 overflow-x-auto select-none">
+<button class="filter-chip shrink-0 px-3 py-1.5 rounded-lg bg-primary-container text-on-primary font-title-sm text-title-sm flex items-center gap-1 shadow-sm transition-transform active:scale-95" data-filter="all" onclick="filterBills('all', this)">
+<span>All</span>
+<span class="font-financial-tabular text-financial-tabular opacity-90">(9)</span>
+</button>
+<button class="filter-chip shrink-0 px-3 py-1.5 rounded-lg bg-error-container text-on-error-container font-title-sm text-title-sm flex items-center gap-1 shadow-sm transition-transform active:scale-95" data-filter="unpaid" onclick="filterBills('unpaid', this)">
+<span>Unpaid</span>
+<span class="font-financial-tabular text-financial-tabular opacity-90">(3)</span>
+</button>
+<button class="filter-chip shrink-0 px-3 py-1.5 rounded-lg bg-tertiary-fixed text-tertiary-container font-title-sm text-title-sm flex items-center gap-1 shadow-sm transition-transform active:scale-95" data-filter="partial" onclick="filterBills('partial', this)">
+<span>Partial</span>
+<span class="font-financial-tabular text-financial-tabular opacity-90">(2)</span>
+</button>
+<button class="filter-chip shrink-0 px-3 py-1.5 rounded-lg bg-secondary-fixed text-on-secondary-container font-title-sm text-title-sm flex items-center gap-1 shadow-sm transition-transform active:scale-95" data-filter="paid" onclick="filterBills('paid', this)">
+<span>Paid</span>
+<span class="font-financial-tabular text-financial-tabular opacity-90">(4)</span>
+</button>
+</div>
+<!-- Populated Bill List -->
+<div class="px-margin pt-space-xs flex flex-col gap-2" id="bills-container">
+<!-- Bill 1 -->
+<div class="bill-card bg-surface-container-lowest rounded-lg p-3 shadow-sm flex items-center justify-between cursor-pointer active:bg-surface-container transition-colors" data-search="INV-0089 Ramesh Metal Works" data-status="unpaid">
+<div class="flex flex-col min-w-0 pr-2">
+<div class="font-title-sm text-title-sm text-on-surface font-semibold truncate">INV-0089</div>
+<div class="font-body-md text-body-md text-on-surface-variant truncate">Ramesh Metal Works</div>
+<div class="font-label-sm text-label-sm text-outline mt-0.5">24 Oct 2023</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<div class="flex flex-col items-end">
+<span class="font-financial-tabular text-financial-tabular text-on-surface font-bold tabular-nums">₹18,450</span>
+<span class="mt-1 px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm">Unpaid</span>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px]">chevron_right</span>
+</div>
+</div>
+<!-- Bill 2 -->
+<div class="bill-card bg-surface-container-lowest rounded-lg p-3 shadow-sm flex items-center justify-between cursor-pointer active:bg-surface-container transition-colors" data-search="INV-0088 Sri Krishna Fabricators" data-status="paid">
+<div class="flex flex-col min-w-0 pr-2">
+<div class="font-title-sm text-title-sm text-on-surface font-semibold truncate">INV-0088</div>
+<div class="font-body-md text-body-md text-on-surface-variant truncate">Sri Krishna Fabricators</div>
+<div class="font-label-sm text-label-sm text-outline mt-0.5">23 Oct 2023</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<div class="flex flex-col items-end">
+<span class="font-financial-tabular text-financial-tabular text-on-surface font-bold tabular-nums">₹42,000</span>
+<span class="mt-1 px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-container font-label-sm text-label-sm">Paid</span>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px]">chevron_right</span>
+</div>
+</div>
+<!-- Bill 3 -->
+<div class="bill-card bg-surface-container-lowest rounded-lg p-3 shadow-sm flex items-center justify-between cursor-pointer active:bg-surface-container transition-colors" data-search="INV-0087 Maruti Engineering" data-status="partial">
+<div class="flex flex-col min-w-0 pr-2">
+<div class="font-title-sm text-title-sm text-on-surface font-semibold truncate">INV-0087</div>
+<div class="font-body-md text-body-md text-on-surface-variant truncate">Maruti Engineering</div>
+<div class="font-label-sm text-label-sm text-outline mt-0.5">22 Oct 2023</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<div class="flex flex-col items-end">
+<span class="font-financial-tabular text-financial-tabular text-on-surface font-bold tabular-nums">₹12,800</span>
+<span class="mt-1 px-2 py-0.5 rounded-full bg-tertiary-fixed text-tertiary-container font-label-sm text-label-sm">Partial</span>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px]">chevron_right</span>
+</div>
+</div>
+<!-- Bill 4 -->
+<div class="bill-card bg-surface-container-lowest rounded-lg p-3 shadow-sm flex items-center justify-between cursor-pointer active:bg-surface-container transition-colors" data-search="INV-0086 Apex Tooling Corp" data-status="paid">
+<div class="flex flex-col min-w-0 pr-2">
+<div class="font-title-sm text-title-sm text-on-surface font-semibold truncate">INV-0086</div>
+<div class="font-body-md text-body-md text-on-surface-variant truncate">Apex Tooling Corp</div>
+<div class="font-label-sm text-label-sm text-outline mt-0.5">21 Oct 2023</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<div class="flex flex-col items-end">
+<span class="font-financial-tabular text-financial-tabular text-on-surface font-bold tabular-nums">₹7,500</span>
+<span class="mt-1 px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-container font-label-sm text-label-sm">Paid</span>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px]">chevron_right</span>
+</div>
+</div>
+<!-- Bill 5 -->
+<div class="bill-card bg-surface-container-lowest rounded-lg p-3 shadow-sm flex items-center justify-between cursor-pointer active:bg-surface-container transition-colors" data-search="INV-0085 Varma Precision Works" data-status="unpaid">
+<div class="flex flex-col min-w-0 pr-2">
+<div class="font-title-sm text-title-sm text-on-surface font-semibold truncate">INV-0085</div>
+<div class="font-body-md text-body-md text-on-surface-variant truncate">Varma Precision Works</div>
+<div class="font-label-sm text-label-sm text-outline mt-0.5">20 Oct 2023</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<div class="flex flex-col items-end">
+<span class="font-financial-tabular text-financial-tabular text-on-surface font-bold tabular-nums">₹34,200</span>
+<span class="mt-1 px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm">Unpaid</span>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px]">chevron_right</span>
+</div>
+</div>
+<!-- Bill 6 -->
+<div class="bill-card bg-surface-container-lowest rounded-lg p-3 shadow-sm flex items-center justify-between cursor-pointer active:bg-surface-container transition-colors" data-search="INV-0084 Ganpati Enterprises" data-status="paid">
+<div class="flex flex-col min-w-0 pr-2">
+<div class="font-title-sm text-title-sm text-on-surface font-semibold truncate">INV-0084</div>
+<div class="font-body-md text-body-md text-on-surface-variant truncate">Ganpati Enterprises</div>
+<div class="font-label-sm text-label-sm text-outline mt-0.5">19 Oct 2023</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<div class="flex flex-col items-end">
+<span class="font-financial-tabular text-financial-tabular text-on-surface font-bold tabular-nums">₹8,900</span>
+<span class="mt-1 px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-container font-label-sm text-label-sm">Paid</span>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px]">chevron_right</span>
+</div>
+</div>
+<!-- Bill 7 -->
+<div class="bill-card bg-surface-container-lowest rounded-lg p-3 shadow-sm flex items-center justify-between cursor-pointer active:bg-surface-container transition-colors" data-search="INV-0083 Deccan Heavy Forgings" data-status="partial">
+<div class="flex flex-col min-w-0 pr-2">
+<div class="font-title-sm text-title-sm text-on-surface font-semibold truncate">INV-0083</div>
+<div class="font-body-md text-body-md text-on-surface-variant truncate">Deccan Heavy Forgings</div>
+<div class="font-label-sm text-label-sm text-outline mt-0.5">18 Oct 2023</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<div class="flex flex-col items-end">
+<span class="font-financial-tabular text-financial-tabular text-on-surface font-bold tabular-nums">₹56,000</span>
+<span class="mt-1 px-2 py-0.5 rounded-full bg-tertiary-fixed text-tertiary-container font-label-sm text-label-sm">Partial</span>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px]">chevron_right</span>
+</div>
+</div>
+<!-- Bill 8 -->
+<div class="bill-card bg-surface-container-lowest rounded-lg p-3 shadow-sm flex items-center justify-between cursor-pointer active:bg-surface-container transition-colors" data-search="INV-0082 Balaji Machining Ltd" data-status="paid">
+<div class="flex flex-col min-w-0 pr-2">
+<div class="font-title-sm text-title-sm text-on-surface font-semibold truncate">INV-0082</div>
+<div class="font-body-md text-body-md text-on-surface-variant truncate">Balaji Machining Ltd</div>
+<div class="font-label-sm text-label-sm text-outline mt-0.5">16 Oct 2023</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<div class="flex flex-col items-end">
+<span class="font-financial-tabular text-financial-tabular text-on-surface font-bold tabular-nums">₹15,300</span>
+<span class="mt-1 px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-container font-label-sm text-label-sm">Paid</span>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px]">chevron_right</span>
+</div>
+</div>
+<!-- Bill 9 -->
+<div class="bill-card bg-surface-container-lowest rounded-lg p-3 shadow-sm flex items-center justify-between cursor-pointer active:bg-surface-container transition-colors" data-search="INV-0081 Om Steels &amp; Hardware" data-status="unpaid">
+<div class="flex flex-col min-w-0 pr-2">
+<div class="font-title-sm text-title-sm text-on-surface font-semibold truncate">INV-0081</div>
+<div class="font-body-md text-body-md text-on-surface-variant truncate">Om Steels &amp; Hardware</div>
+<div class="font-label-sm text-label-sm text-outline mt-0.5">15 Oct 2023</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<div class="flex flex-col items-end">
+<span class="font-financial-tabular text-financial-tabular text-on-surface font-bold tabular-nums">₹22,100</span>
+<span class="mt-1 px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm">Unpaid</span>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px]">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Floating Action Button (+ New Bill) -->
+<div class="fixed bottom-6 right-margin z-40">
+<button class="flex items-center gap-1.5 h-11 px-4 rounded-lg bg-primary-container text-on-primary font-title-sm text-title-sm shadow-md active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>+ New Bill</span>
+</button>
+</div>
+</div>
+<script>
+  let activeFilter = 'all';
+
+  function filterBills(status, chipElement) {
+    activeFilter = status;
+    document.querySelectorAll('.filter-chip').forEach(chip => {
+      chip.classList.remove('opacity-100');
+      if (chip !== chipElement) {
+        chip.classList.add('opacity-70');
+      } else {
+        chip.classList.remove('opacity-70');
+      }
+    });
+    applyFilters();
+  }
+
+  function applyFilters() {
+    const query = (document.getElementById('bill-search-input')?.value || '').toLowerCase().trim();
+    const cards = document.querySelectorAll('.bill-card');
+
+    cards.forEach(card => {
+      const cardStatus = card.getAttribute('data-status');
+      const searchTarget = (card.getAttribute('data-search') || '').toLowerCase();
+
+      const matchesStatus = (activeFilter === 'all' || cardStatus === activeFilter);
+      const matchesSearch = !query || searchTarget.includes(query);
+
+      if (matchesStatus && matchesSearch) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+  }
+
+  document.getElementById('bill-search-input')?.addEventListener('input', applyFilters);
+</script></main></body></html>

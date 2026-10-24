@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>ShopManager Billing</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"tertiary":"#692c00","on-primary-fixed-variant":"#004d64","secondary-fixed-dim":"#80d5cb","on-primary":"#ffffff","on-secondary-container":"#006f67","on-primary-fixed":"#001f2a","error-container":"#ffdad6","background":"#f8f9ff","on-primary-container":"#93d3ef","surface-container-high":"#dce9ff","on-secondary-fixed":"#00201d","primary-fixed-dim":"#90cfec","on-tertiary":"#ffffff","secondary-fixed":"#9cf2e8","primary-container":"#0d5c75","on-surface-variant":"#40484c","on-background":"#0d1c2e","surface-variant":"#d5e3fc","on-secondary":"#ffffff","surface-container":"#e6eeff","on-tertiary-fixed-variant":"#763300","surface-container-highest":"#d5e3fc","on-tertiary-container":"#ffbb97","on-surface":"#0d1c2e","inverse-surface":"#233144","secondary-container":"#99efe5","on-error":"#ffffff","on-error-container":"#93000a","surface-container-low":"#eff4ff","on-tertiary-fixed":"#331200","surface-tint":"#1e667f","inverse-on-surface":"#eaf1ff","error":"#ba1a1a","tertiary-fixed-dim":"#ffb68e","on-secondary-fixed-variant":"#00504a","tertiary-container":"#8d3e00","outline-variant":"#bfc8cd","surface":"#f8f9ff","inverse-primary":"#90cfec","primary":"#004357","outline":"#70787d","surface-bright":"#f8f9ff","tertiary-fixed":"#ffdbca","secondary":"#006a63","primary-fixed":"#bde9ff","surface-container-lowest":"#ffffff","surface-dim":"#ccdbf3"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"gutter":"1rem","margin-desktop":"1.5rem","space-xs":"0.25rem","space-lg":"1rem","space-md":"0.75rem","margin":"1rem","gutter-desktop":"1.25rem","space-xl":"1.5rem","space-sm":"0.5rem"},"fontFamily":{"title-sm":["Inter"],"financial-tabular":["Inter"],"label-md":["Inter"],"headline-md":["Inter"],"body-md":["Inter"],"financial-display":["Inter"],"body-lg":["Inter"],"headline-lg-mobile":["Inter"],"label-sm":["Inter"],"headline-lg":["Inter"],"headline-sm":["Inter"],"body-sm":["Inter"],"title-md":["Inter"]},"fontSize":{"title-sm":["13px",{"lineHeight":"18px","fontWeight":"600"}],"financial-tabular":["13px",{"lineHeight":"18px","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","fontWeight":"500"}],"headline-md":["22px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-md":["13px",{"lineHeight":"18px","fontWeight":"400"}],"financial-display":["24px",{"lineHeight":"30px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-lg":["15px",{"lineHeight":"22px","fontWeight":"400"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"700"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.03em","fontWeight":"600"}],"headline-lg":["30px",{"lineHeight":"38px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-sm":["18px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"title-md":["15px",{"lineHeight":"20px","fontWeight":"600"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 w-full z-50 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-14 w-full px-margin-desktop flex items-center justify-between"><div class="flex items-center gap-space-md"><span class="font-title-md text-title-md text-primary tracking-tight">ShopManager</span><span class="h-4 w-px bg-outline-variant"></span><span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Terminal</span></div><div class="flex items-center gap-space-lg"><nav class="flex items-center gap-space-lg" data-active-classes="text-primary font-title-sm"><a class="font-title-sm text-title-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="bill-list" href="#">Billing</a><a aria-current="page" class="transition-colors text-primary font-title-sm" data-path="create-bill" href="#">New Invoice</a></nav><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-14 px-margin-desktop bg-background min-h-screen"><div class="flex flex-col w-full pb-12">
+<!-- Top Navigation & Context Bar -->
+<div class="flex flex-wrap items-center justify-between gap-space-md py-space-md mb-space-lg bg-surface-container-lowest px-margin-desktop rounded-lg shadow-sm">
+<div class="flex items-center gap-space-md">
+<a class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors" href="#" title="Back to Billing">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+</a>
+<div>
+<div class="flex items-center gap-space-sm">
+<h1 class="font-headline-sm text-headline-sm text-on-surface">Create Bill</h1>
+<span class="bg-surface-container-high text-primary font-label-sm text-label-sm px-2 py-0.5 rounded-full uppercase tracking-wider">Draft #INV-2023-089</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Industrial Supply Ledger • Counter Terminal 01</p>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-space-xs bg-surface-container-low px-3 py-1.5 rounded-lg text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-primary">calendar_today</span>
+<span>Bill Date: <strong class="font-title-sm text-title-sm text-on-surface">Today, 25 Oct 2023</strong></span>
+</div>
+<button class="h-8 px-3 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-title-sm text-title-sm flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">print</span>
+<span>Draft Print</span>
+</button>
+</div>
+</div>
+<!-- Master Layout: 2 Columns (Main Invoice Entry & Sticky Summary) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-start">
+<!-- LEFT / MAIN COLUMN (8 Cols) -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg">
+<!-- 1. Customer Card -->
+<div class="bg-surface-container-lowest p-4 rounded-lg shadow-sm">
+<div class="flex flex-wrap items-center justify-between gap-space-sm pb-space-sm mb-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">apartment</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Customer Ledger &amp; Identity</span>
+</div>
+<!-- Outstanding Amber Pill -->
+<div class="inline-flex items-center gap-1.5 bg-amber-50 text-amber-800 px-2.5 py-0.5 rounded-full font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse"></span>
+<span>Previous Outstanding: ₹4,200</span>
+</div>
+</div>
+<div class="flex flex-wrap items-start justify-between gap-space-md pt-1">
+<div>
+<h2 class="font-title-md text-title-md text-on-surface font-semibold">Ramesh Metal Works</h2>
+<div class="flex flex-wrap items-center gap-x-4 gap-y-1 mt-1 font-body-sm text-body-sm text-on-surface-variant">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">call</span>
+                +91 98450 12345
+              </span>
+<span class="text-outline-variant">•</span>
+<span class="flex items-center gap-1 font-financial-tabular text-financial-tabular">
+<span class="material-symbols-outlined text-[14px]">badge</span>
+                GSTIN: 29AABCU9603R1ZM
+              </span>
+</div>
+</div>
+<button class="h-8 px-3 rounded-lg bg-surface-container-low text-primary hover:bg-surface-container font-title-sm text-title-sm flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+<span>Switch Party</span>
+</button>
+</div>
+</div>
+<!-- 2. Visual Operational Telemetry / Dispatch Badge -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<div class="bg-surface-container-lowest p-3 rounded-lg shadow-sm flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">inventory_2</span>
+</div>
+<div class="min-w-0">
+<span class="block font-label-sm text-label-sm text-on-surface-variant uppercase">Line Items</span>
+<span class="block font-financial-display text-headline-sm text-on-surface">3 Catalog Skus</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded-lg shadow-sm flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-secondary/10 text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">local_shipping</span>
+</div>
+<div class="min-w-0">
+<span class="block font-label-sm text-label-sm text-on-surface-variant uppercase">Dispatch Mode</span>
+<span class="block font-title-sm text-title-sm text-on-surface truncate">Local Tempo (Road Freight)</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded-lg shadow-sm flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-amber-100 text-amber-900 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">credit_card_clock</span>
+</div>
+<div class="min-w-0">
+<span class="block font-label-sm text-label-sm text-on-surface-variant uppercase">Credit Terms</span>
+<span class="block font-title-sm text-title-sm text-on-surface">Net 15 Days</span>
+</div>
+</div>
+</div>
+<!-- 3. Items Section (Compact Utilitarian Table) -->
+<div class="bg-surface-container-lowest rounded-lg shadow-sm overflow-hidden">
+<div class="p-3 bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">format_list_bulleted</span>
+<span class="font-title-sm text-title-sm text-on-surface">Billed Line Items</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Rapid Tab Entry Active [Ctrl+Enter to Commit]</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+<th class="py-2.5 px-3 uppercase tracking-wider font-semibold">Item Name &amp; Stock</th>
+<th class="py-2.5 px-3 uppercase tracking-wider font-semibold w-24 text-right">Qty</th>
+<th class="py-2.5 px-3 uppercase tracking-wider font-semibold w-32 text-right">Rate (₹)</th>
+<th class="py-2.5 px-3 uppercase tracking-wider font-semibold w-32 text-right">Amount (₹)</th>
+<th class="py-2.5 px-3 uppercase tracking-wider font-semibold w-14 text-center">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container font-body-md text-body-md" id="items-table-body">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-2 px-3">
+<div class="font-title-sm text-title-sm text-on-surface">MS Flange 150mm (Grade A)</div>
+<div class="font-label-sm text-label-sm text-secondary flex items-center gap-1 mt-0.5">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                    Available: 120 pcs • HSN 7307
+                  </div>
+</td>
+<td class="py-2 px-3 text-right">
+<input class="w-20 h-8 text-right font-financial-tabular text-financial-tabular bg-surface-container-low px-2 rounded-lg text-on-surface focus:outline-none focus:bg-surface-container-high transition-colors" type="number" value="20"/>
+</td>
+<td class="py-2 px-3 text-right">
+<div class="inline-flex items-center justify-end bg-surface-container-low px-2 h-8 rounded-lg">
+<span class="text-on-surface-variant text-body-sm mr-1">₹</span>
+<input class="w-20 text-right font-financial-tabular text-financial-tabular bg-transparent text-on-surface focus:outline-none" type="text" value="650"/>
+</div>
+</td>
+<td class="py-2 px-3 text-right font-financial-tabular text-financial-tabular text-on-surface font-semibold">
+                  ₹13,000
+                </td>
+<td class="py-2 px-3 text-center">
+<button class="w-7 h-7 inline-flex items-center justify-center rounded-lg text-error hover:bg-error-container hover:text-on-error-container transition-colors" title="Remove line item" type="button">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-2 px-3">
+<div class="font-title-sm text-title-sm text-on-surface">Hex Bolts M16 × 65mm</div>
+<div class="font-label-sm text-label-sm text-secondary flex items-center gap-1 mt-0.5">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                    Available: 500 pcs • HSN 7318
+                  </div>
+</td>
+<td class="py-2 px-3 text-right">
+<input class="w-20 h-8 text-right font-financial-tabular text-financial-tabular bg-surface-container-low px-2 rounded-lg text-on-surface focus:outline-none focus:bg-surface-container-high transition-colors" type="number" value="100"/>
+</td>
+<td class="py-2 px-3 text-right">
+<div class="inline-flex items-center justify-end bg-surface-container-low px-2 h-8 rounded-lg">
+<span class="text-on-surface-variant text-body-sm mr-1">₹</span>
+<input class="w-20 text-right font-financial-tabular text-financial-tabular bg-transparent text-on-surface focus:outline-none" type="text" value="45"/>
+</div>
+</td>
+<td class="py-2 px-3 text-right font-financial-tabular text-financial-tabular text-on-surface font-semibold">
+                  ₹4,500
+                </td>
+<td class="py-2 px-3 text-center">
+<button class="w-7 h-7 inline-flex items-center justify-center rounded-lg text-error hover:bg-error-container hover:text-on-error-container transition-colors" title="Remove line item" type="button">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-2 px-3">
+<div class="font-title-sm text-title-sm text-on-surface">Industrial Primer Grey (20L)</div>
+<div class="font-label-sm text-label-sm text-secondary flex items-center gap-1 mt-0.5">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                    Available: 15 drums • HSN 3208
+                  </div>
+</td>
+<td class="py-2 px-3 text-right">
+<input class="w-20 h-8 text-right font-financial-tabular text-financial-tabular bg-surface-container-low px-2 rounded-lg text-on-surface focus:outline-none focus:bg-surface-container-high transition-colors" type="number" value="2"/>
+</td>
+<td class="py-2 px-3 text-right">
+<div class="inline-flex items-center justify-end bg-surface-container-low px-2 h-8 rounded-lg">
+<span class="text-on-surface-variant text-body-sm mr-1">₹</span>
+<input class="w-20 text-right font-financial-tabular text-financial-tabular bg-transparent text-on-surface focus:outline-none" type="text" value="2,400"/>
+</div>
+</td>
+<td class="py-2 px-3 text-right font-financial-tabular text-financial-tabular text-on-surface font-semibold">
+                  ₹4,800
+                </td>
+<td class="py-2 px-3 text-center">
+<button class="w-7 h-7 inline-flex items-center justify-center rounded-lg text-error hover:bg-error-container hover:text-on-error-container transition-colors" title="Remove line item" type="button">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Add Item Control Bar -->
+<div class="p-3 bg-surface-container-lowest flex items-center justify-between">
+<button class="h-8 px-3 rounded-lg bg-primary-container text-on-primary hover:bg-primary font-title-sm text-title-sm inline-flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Add Item</span>
+</button>
+<div class="text-on-surface-variant font-label-sm text-label-sm">
+            Quick Scan Barcode or Press <kbd class="px-1.5 py-0.5 bg-surface-container rounded font-financial-tabular text-on-surface">F2</kbd>
+</div>
+</div>
+</div>
+<!-- 4. Notes & Operational Terms Section -->
+<div class="bg-surface-container-lowest p-4 rounded-lg shadow-sm">
+<label class="font-title-sm text-title-sm text-on-surface block mb-1.5 flex items-center gap-2" for="bill-notes">
+<span class="material-symbols-outlined text-primary text-[18px]">description</span>
+<span>Notes &amp; Operational Terms</span>
+</label>
+<textarea class="w-full rounded-lg bg-surface-container-low p-2.5 font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:bg-surface-container-high transition-colors resize-none" id="bill-notes" rows="2">Delivery via local tempo. Payment balance promised in 15 days.</textarea>
+<div class="flex items-center justify-between mt-2 font-label-sm text-label-sm text-on-surface-variant">
+<span>Printed on outgoing duplicate tax invoice.</span>
+<span>Max 250 characters</span>
+</div>
+</div>
+<!-- Industrial Warehouse Context Photo Showcase -->
+<div class="bg-surface-container-lowest p-4 rounded-lg shadow-sm">
+<div class="flex items-center justify-between mb-3">
+<span class="font-title-sm text-title-sm text-on-surface">Fulfillment Yard Verification</span>
+<span class="font-label-sm text-label-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+            All 3 items ready for pallet staging
+          </span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-space-md">
+<div class="relative rounded-lg overflow-hidden h-24 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="High contrast photograph of industrial steel flanges neatly arranged on heavy wooden pallets in an organized warehouse with cool teal and blue cast ambient lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqTECXcYalM9ZPU4McSV7SBYii3qO3AQ_W9k00ac8h6iijjZ2tMWSJ1SkPnOgzxmhBJ3fR9X5Vx5HQOIiQ9tpQG9jAJbLQ4RHJMcDxuIIcfjNf_Z93dh2jQZGwYD4lU467FeIPIt2I0tUkqq608hkgIXYRxX1FmAE6dOVcnMcuQFQvyXfBns3Sr0nvmg3LyJiQK2JjY70x63LffHoOK-kPMk82gFsqkTRdkZ1_b2bgnTbCKfU0wL5e"/>
+<div class="absolute bottom-1 left-1 bg-on-surface/80 text-surface font-label-sm text-label-sm px-1.5 py-0.5 rounded">MS Flanges</div>
+</div>
+<div class="relative rounded-lg overflow-hidden h-24 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Close up photograph of precision metal hex bolts and fasteners stored in industrial bin shelving under crisp task lighting with workshop background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_3SBbM7arWP9w5doZqxvUzeSRG8OEiE1Yyt6L4jvs087UAi1pd41WXwRKqi6DWcfFVl2p3vjFOSS5oBGaYsfQnN__Nl7XStnuYTXZ8-wStQ955_YG7Dx9v_scoABtIDGQ8zo9noiEWYgRFi8JO1g9_6oU2J52Aqe_ARVaDi2Qdb_yFfQqKNdE6i0ZlzZ5Z9Jy5w1dnb-hEtdtu0MrKEuKqCZLWZAR_VMKrtMas4GdaJj0gRBdg5FV"/>
+<div class="absolute bottom-1 left-1 bg-on-surface/80 text-surface font-label-sm text-label-sm px-1.5 py-0.5 rounded">Hex Bolts M16</div>
+</div>
+<div class="relative rounded-lg overflow-hidden h-24 bg-surface-container col-span-2 md:col-span-1">
+<img class="w-full h-full object-cover" data-alt="Sealed steel drums of industrial primer coating on factory dispatch bay floor with transport strapping ready for tempo loading." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCw5YaiIVPJbTII7kLVaxcBID8ayaAS8-Nk63QvZAeczAN6M9aiSLtJETR4NxNyZOmJu8xfmlkCPu8GxOdqBmMhzYxwZ9yfINeZCa9_H4XWh5iFiJbqfEuIdRgi1ORtse_rzdTjrqxQo-RdTXHb_KWpUB6raI8SgJ7coRjiqIqfH9g0LochvcWtfF0RwVl_jbvmyUDErgkN2cHIk3nTM9QrFL1ycF1ozhBelfPiIub6FE5XUXI3q_Dm"/>
+<div class="absolute bottom-1 left-1 bg-on-surface/80 text-surface font-label-sm text-label-sm px-1.5 py-0.5 rounded">Primer Grey 20L</div>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN (Sticky Sidebar / Totals & Checkout Summary - 4 Cols) -->
+<div class="lg:col-span-4 flex flex-col gap-space-lg lg:sticky lg:top-16">
+<!-- Totals Card -->
+<div class="bg-surface-container-lowest p-4 rounded-lg shadow-sm">
+<div class="pb-space-sm mb-space-sm flex items-center justify-between">
+<h3 class="font-title-md text-title-md text-on-surface font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">calculate</span>
+<span>Billing Summary</span>
+</h3>
+<span class="font-financial-tabular text-financial-tabular text-on-surface-variant">INR (₹)</span>
+</div>
+<div class="space-y-2.5 pb-3">
+<div class="flex items-center justify-between font-body-md text-body-md">
+<span class="text-on-surface-variant">Subtotal</span>
+<span class="font-financial-tabular text-financial-tabular text-on-surface">₹22,300</span>
+</div>
+<div class="flex items-center justify-between font-body-md text-body-md">
+<span class="text-on-surface-variant flex items-center gap-1">
+<span>Discount</span>
+<span class="text-label-sm text-secondary bg-secondary-container/40 px-1 py-0.2 rounded font-label-sm">PROMO</span>
+</span>
+<span class="font-financial-tabular text-financial-tabular text-secondary font-semibold">-₹500</span>
+</div>
+<div class="flex items-center justify-between font-body-md text-body-md">
+<span class="text-on-surface-variant">Other Charges (Loading)</span>
+<span class="font-financial-tabular text-financial-tabular text-on-surface">+₹200</span>
+</div>
+</div>
+<!-- Grand Total Highlight Block -->
+<div class="bg-surface-container-low p-3 rounded-lg mb-3">
+<div class="flex items-baseline justify-between">
+<span class="font-title-sm text-title-sm text-on-surface uppercase tracking-wide">Grand Total</span>
+<span class="font-financial-display text-financial-display text-on-surface font-bold">₹22,000</span>
+</div>
+</div>
+<!-- Informational Notice (Outstanding Isolation) -->
+<div class="bg-amber-50 p-2.5 rounded-lg flex items-start gap-2 mb-3">
+<span class="material-symbols-outlined text-amber-700 text-[18px] shrink-0 mt-0.5">info</span>
+<div class="font-body-sm text-body-sm text-amber-900 leading-tight">
+            Customer existing outstanding: <strong class="font-financial-tabular">₹4,200</strong> (not included in this bill total).
+          </div>
+</div>
+<!-- Total Payable Now Banner -->
+<div class="bg-primary text-on-primary p-3 rounded-lg flex items-center justify-between mb-4">
+<div>
+<span class="block font-label-sm text-label-sm text-on-primary-container uppercase tracking-wider">Due on this invoice</span>
+<span class="font-title-md text-title-md font-semibold">Total Payable Now</span>
+</div>
+<span class="font-financial-display text-headline-sm font-bold text-on-primary">₹22,000</span>
+</div>
+<!-- Payment Settlement Section -->
+<div class="space-y-3 pt-1">
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">
+              Amount Received Now
+            </label>
+<div class="relative">
+<span class="absolute left-3 top-2 font-financial-tabular text-financial-tabular text-on-surface-variant">₹</span>
+<input class="w-full h-9 pl-7 pr-3 bg-surface-container-low rounded-lg font-financial-tabular text-title-md font-semibold text-on-surface focus:outline-none focus:bg-surface-container-high transition-colors" type="text" value="10,000"/>
+</div>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1.5">
+              Payment Method
+            </label>
+<div class="grid grid-cols-3 gap-1.5 p-1 bg-surface-container rounded-lg">
+<button class="h-8 rounded-lg bg-surface-container-lowest text-primary font-title-sm text-title-sm shadow-sm flex items-center justify-center gap-1 font-semibold" type="button">
+<span class="material-symbols-outlined text-[16px]">payments</span>
+<span>Cash</span>
+</button>
+<button class="h-8 rounded-lg text-on-surface-variant hover:text-on-surface font-title-sm text-title-sm flex items-center justify-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">qr_code_2</span>
+<span>UPI</span>
+</button>
+<button class="h-8 rounded-lg text-on-surface-variant hover:text-on-surface font-title-sm text-title-sm flex items-center justify-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">credit_card</span>
+<span>Other</span>
+</button>
+</div>
+</div>
+<!-- Remaining Balance Highlight -->
+<div class="pt-2 flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Remaining Balance for this Bill</span>
+<!-- Red Bold Pill -->
+<div class="bg-red-50 text-red-700 px-3 py-1 rounded-full font-financial-tabular text-financial-tabular font-bold">
+              ₹12,000
+            </div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="mt-6 pt-4 flex items-center gap-space-sm">
+<button class="w-1/3 h-11 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-title-sm text-title-sm flex items-center justify-center transition-colors" type="button">
+            Cancel
+          </button>
+<button class="w-2/3 h-11 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-title-sm text-title-sm px-6 py-3 font-semibold flex items-center justify-center gap-2 shadow-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span>Save Bill</span>
+</button>
+</div>
+<!-- Keyboard Shortcut Hint -->
+<div class="mt-3 text-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Press <kbd class="px-1 bg-surface-container rounded text-on-surface">Ctrl + S</kbd> to save &amp; generate tax voucher</span>
+</div>
+</div>
+<!-- Quick Financial Diagnostics Metric -->
+<div class="bg-surface-container-lowest p-3 rounded-lg shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">account_balance_wallet</span>
+<div class="min-w-0">
+<span class="block font-label-sm text-label-sm text-on-surface-variant uppercase">Post-Invoice Exposure</span>
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">Total Owed: ₹16,200</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm bg-surface-container px-2 py-1 rounded text-on-surface-variant">
+          ₹4.2k old + ₹12k new
+        </span>
+</div>
+</div>
+</div>
+</div></main><footer class="w-full bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] mt-auto"><div class="w-full px-margin-desktop h-12 flex items-center justify-between"><div class="flex items-center gap-space-md text-on-surface-variant font-label-sm text-label-sm"><span>ShopManager ERP</span><span>•</span><span>Point of Sale System</span></div><div class="font-financial-tabular text-financial-tabular text-on-surface-variant">Terminal #01 • Active Shift</div></div></footer></body></html>

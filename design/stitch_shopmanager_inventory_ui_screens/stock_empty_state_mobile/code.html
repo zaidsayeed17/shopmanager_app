@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-error": "#ffffff", "error": "#ba1a1a", "inverse-on-surface": "#eef0ff", "surface-dim": "#d2d9f4", "primary": "#004357", "outline": "#70787d", "on-tertiary-container": "#c7c4ff", "primary-fixed-dim": "#90cfec", "secondary-fixed": "#9cf2e8", "surface-container-highest": "#dae2fd", "surface-container-lowest": "#ffffff", "on-primary-fixed": "#001f2a", "tertiary": "#2d1bb7", "on-secondary-fixed": "#00201d", "error-container": "#ffdad6", "secondary-container": "#99efe5", "on-primary-fixed-variant": "#004d64", "surface-bright": "#faf8ff", "tertiary-fixed-dim": "#c3c0ff", "outline-variant": "#bfc8cd", "on-secondary-fixed-variant": "#00504a", "surface-variant": "#dae2fd", "tertiary-fixed": "#e3dfff", "on-secondary-container": "#006f67", "on-primary": "#ffffff", "primary-container": "#0d5c75", "surface-tint": "#1e667f", "surface-container": "#eaedff", "surface": "#faf8ff", "on-surface-variant": "#40484c", "on-primary-container": "#93d3ef", "surface-container-low": "#f2f3ff", "surface-container-high": "#e2e7ff", "on-secondary": "#ffffff", "background": "#faf8ff", "on-tertiary-fixed-variant": "#372abf", "secondary": "#006a63", "on-tertiary": "#ffffff", "secondary-fixed-dim": "#80d5cb", "tertiary-container": "#473cce", "on-error-container": "#93000a", "primary-fixed": "#bde9ff", "inverse-primary": "#90cfec", "inverse-surface": "#283044", "on-tertiary-fixed": "#100069", "on-surface": "#131b2e", "on-background": "#131b2e" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "gutter-desktop": "1.5rem", "margin-desktop": "2rem", "margin": "1rem", "margin-tablet": "1.5rem", "gutter-tablet": "1.25rem", "space-sm": "0.5rem", "space-xl": "2rem", "space-xs": "0.25rem", "space-md": "1rem", "space-lg": "1.5rem", "gutter": "1rem" }, fontFamily: { "label-lg": ["Inter"], "headline-lg-mobile": ["Inter"], "body-sm": ["Inter"], "headline-sm": ["Inter"], "title-md": ["Inter"], "currency-display": ["Inter"], "headline-md": ["Inter"], "label-md": ["Inter"], "title-sm": ["Inter"], "headline-lg": ["Inter"], "label-sm": ["Inter"], "body-md": ["Inter"], "body-lg": ["Inter"] }, fontSize: { "label-lg": ["14px", { lineHeight: "20px", fontWeight: "500" }], "headline-lg-mobile": ["24px", { lineHeight: "32px", fontWeight: "700" }], "body-sm": ["12px", { lineHeight: "16px", fontWeight: "400" }], "headline-sm": ["18px", { lineHeight: "24px", fontWeight: "600" }], "title-md": ["16px", { lineHeight: "22px", fontWeight: "600" }], "currency-display": ["20px", { lineHeight: "26px", fontWeight: "700" }], "headline-md": ["22px", { lineHeight: "28px", fontWeight: "600" }], "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "600" }], "title-sm": ["14px", { lineHeight: "20px", fontWeight: "600" }], "headline-lg": ["30px", { lineHeight: "38px", fontWeight: "700" }], "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.03em", fontWeight: "600" }], "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }], "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }] } } } }</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-background font-body-md text-on-surface antialiased min-h-screen flex flex-col"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-14 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-lg bg-primary-container/10 flex items-center justify-center text-primary-container"><span class="material-symbols-outlined text-[20px]">warehouse</span></div><div><span class="block font-headline-sm text-headline-sm text-on-surface leading-tight">Stock</span><span class="block font-label-sm text-label-sm text-on-surface-variant">Main Facility • In Sync</span></div></div><div class="flex items-center gap-space-xs"><button aria-label="Sync Status" class="w-11 h-11 flex items-center justify-center rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[20px]">sync</span></button><button aria-label="Notifications" class="w-11 h-11 relative flex items-center justify-center rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-error"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-space-xs"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 w-full bg-background pt-14 pb-20 px-margin flex flex-col"><div class="flex flex-col w-full pb-6 space-y-space-md">
+<!-- Search & Barcode Row -->
+<div class="flex items-center gap-space-sm pt-space-xs">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px] pointer-events-none">search</span>
+<input class="w-full h-11 pl-10 pr-4 bg-surface-container-lowest text-on-surface font-body-md text-body-md placeholder:text-outline-variant rounded shadow-sm focus:outline-none transition-all" disabled="" placeholder="Search materials or products..." type="search"/>
+</div>
+<button aria-label="Scan barcode" class="w-11 h-11 flex-shrink-0 flex items-center justify-center bg-surface-container-lowest text-primary rounded shadow-sm active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[22px]">barcode_scanner</span>
+</button>
+</div>
+<!-- Segmented Filter Tabs (Zero States) -->
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1 no-scrollbar">
+<button class="px-3 py-1.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm whitespace-nowrap shadow-sm" type="button">
+      All (0)
+    </button>
+<button class="px-3 py-1.5 rounded-full bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm whitespace-nowrap active:bg-surface-container transition-colors" type="button">
+      Raw Materials (0)
+    </button>
+<button class="px-3 py-1.5 rounded-full bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm whitespace-nowrap active:bg-surface-container transition-colors" type="button">
+      Finished Products (0)
+    </button>
+</div>
+<!-- Central Empty State Box -->
+<div class="relative overflow-hidden bg-surface-container-lowest rounded shadow-sm p-6 text-center flex flex-col items-center">
+<!-- Playful Ambient Glow Background -->
+<div class="absolute -top-12 -right-12 w-32 h-32 bg-primary-fixed/20 rounded-full blur-2xl pointer-events-none"></div>
+<div class="absolute -bottom-10 -left-10 w-28 h-28 bg-secondary-fixed/20 rounded-full blur-xl pointer-events-none"></div>
+<!-- Lively Animated Icon Pod -->
+<div class="relative mb-5 mt-2">
+<div class="w-20 h-20 rounded-full bg-primary-fixed flex items-center justify-center text-primary-container shadow-inner transition-transform duration-300 hover:scale-105">
+<span class="material-symbols-outlined text-[42px]" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+</div>
+<div class="absolute -bottom-1 -right-1 w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shadow-md animate-bounce">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</div>
+</div>
+<!-- Primary Headlines -->
+<h2 class="font-headline-sm text-headline-sm text-on-surface tracking-tight mb-2">
+      No items in your stock yet
+    </h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs mb-6 leading-relaxed">
+      Start adding raw materials (like fabric, thread, trim) or finished products to track inventory quantities and get low-stock alerts.
+    </p>
+<!-- Call to Action -->
+<div class="w-full flex flex-col gap-space-sm items-center max-w-xs">
+<button class="w-full h-11 px-space-md bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg rounded flex items-center justify-center gap-space-xs shadow active:scale-[0.98] transition-all" id="addItemBtn" type="button">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+<span>+ Add Your First Item</span>
+</button>
+<button class="py-2 px-3 text-secondary hover:text-on-secondary-container font-label-md text-label-md flex items-center gap-1.5 transition-colors group" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary group-hover:rotate-12 transition-transform">school</span>
+<span>Need help? Learn how stock tracking works</span>
+</button>
+</div>
+</div>
+<!-- Helpful Getting Started Tips Bento/Card -->
+<div class="bg-surface-container-low rounded p-4 shadow-sm space-y-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">lightbulb</span>
+<h3 class="font-title-sm text-title-sm text-on-surface">Tips for factory &amp; shop floor setup</h3>
+</div>
+<div class="space-y-2.5 pt-1">
+<div class="flex items-start gap-3 bg-surface-container-lowest p-3 rounded">
+<div class="w-7 h-7 rounded-full bg-secondary-fixed flex-shrink-0 flex items-center justify-center text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[16px]">precision_manufacturing</span>
+</div>
+<div class="flex-1">
+<p class="font-label-md text-label-md text-on-surface">Auto-consume in production</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Track raw materials consumed automatically when batch work orders are logged.</p>
+</div>
+</div>
+<div class="flex items-start gap-3 bg-surface-container-lowest p-3 rounded">
+<div class="w-7 h-7 rounded-full bg-primary-fixed flex-shrink-0 flex items-center justify-center text-on-primary-fixed">
+<span class="material-symbols-outlined text-[16px]">notification_important</span>
+</div>
+<div class="flex-1">
+<p class="font-label-md text-label-md text-on-surface">Prevent run-out bottlenecks</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Set minimum stock thresholds to receive instant alerts before materials run dry.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Category Preview Chips -->
+<div class="flex flex-col space-y-2 pt-1">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider px-1">Common Quick Starters</span>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="p-3 bg-surface-container-lowest rounded shadow-sm flex items-center gap-2.5">
+<div class="w-8 h-8 rounded bg-secondary-fixed/50 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">texture</span>
+</div>
+<div class="min-w-0">
+<span class="block font-label-md text-label-md text-on-surface truncate">Raw Material</span>
+<span class="block font-body-sm text-body-sm text-outline truncate">Cotton / Dyes</span>
+</div>
+</div>
+<div class="p-3 bg-surface-container-lowest rounded shadow-sm flex items-center gap-2.5">
+<div class="w-8 h-8 rounded bg-primary-fixed/50 flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[18px]">check_box</span>
+</div>
+<div class="min-w-0">
+<span class="block font-label-md text-label-md text-on-surface truncate">Finished Good</span>
+<span class="block font-body-sm text-body-sm text-outline truncate">Packed Garments</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    const btn = document.getElementById('addItemBtn');
+    if (btn) {
+      btn.addEventListener('click', function() {
+        const icon = btn.querySelector('.material-symbols-outlined');
+        if (icon) {
+          icon.classList.add('rotate-90');
+          setTimeout(() => icon.classList.remove('rotate-90'), 300);
+        }
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/95 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.04)]" data-active-classes="text-primary-container font-semibold"><div class="h-16 px-space-xs grid grid-cols-5 items-center"><a class="flex flex-col items-center justify-center gap-0.5 h-full text-on-surface-variant hover:text-on-surface transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[22px]">dashboard</span><span class="font-label-sm text-label-sm tracking-tight">Dashboard</span></a><a aria-current="page" class="flex flex-col items-center justify-center gap-0.5 h-full transition-colors text-primary-container font-semibold" data-path="stock" href="#"><span class="material-symbols-outlined text-[22px]">inventory_2</span><span class="font-label-sm text-label-sm tracking-tight">Stock</span></a><a class="flex flex-col items-center justify-center gap-0.5 h-full text-on-surface-variant hover:text-on-surface transition-colors" data-path="production" href="#"><span class="material-symbols-outlined text-[22px]">precision_manufacturing</span><span class="font-label-sm text-label-sm tracking-tight">Production</span></a><a class="flex flex-col items-center justify-center gap-0.5 h-full text-on-surface-variant hover:text-on-surface transition-colors" data-path="sales" href="#"><span class="material-symbols-outlined text-[22px]">receipt_long</span><span class="font-label-sm text-label-sm tracking-tight">Sales</span></a><a class="flex flex-col items-center justify-center gap-0.5 h-full text-on-surface-variant hover:text-on-surface transition-colors" data-path="more" href="#"><span class="material-symbols-outlined text-[22px]">more_horiz</span><span class="font-label-sm text-label-sm tracking-tight">More</span></a></div></nav></body></html>

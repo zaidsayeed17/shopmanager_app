@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"secondary-fixed":"#9cf2e8","on-tertiary-fixed-variant":"#763300","outline":"#70787d","surface-dim":"#d2d9f4","surface-bright":"#faf8ff","on-background":"#131b2e","tertiary-fixed-dim":"#ffb68e","tertiary-container":"#8d3e00","on-secondary-container":"#006f67","on-error-container":"#93000a","background":"#faf8ff","on-surface":"#131b2e","on-primary-fixed-variant":"#004d64","on-error":"#ffffff","surface-container-lowest":"#ffffff","tertiary":"#692c00","surface":"#faf8ff","on-primary-fixed":"#001f2a","error":"#ba1a1a","on-surface-variant":"#40484c","secondary-container":"#99efe5","on-secondary-fixed-variant":"#00504a","on-tertiary-container":"#ffbb97","on-tertiary":"#ffffff","inverse-surface":"#283044","secondary":"#006a63","outline-variant":"#bfc8cd","primary-fixed-dim":"#90cfec","secondary-fixed-dim":"#80d5cb","on-primary":"#ffffff","surface-container-low":"#f2f3ff","on-primary-container":"#93d3ef","on-secondary":"#ffffff","primary-fixed":"#bde9ff","error-container":"#ffdad6","surface-tint":"#1e667f","surface-container-high":"#e2e7ff","surface-variant":"#dae2fd","surface-container":"#eaedff","on-secondary-fixed":"#00201d","primary":"#004357","inverse-on-surface":"#eef0ff","surface-container-highest":"#dae2fd","primary-container":"#0d5c75","on-tertiary-fixed":"#331200","tertiary-fixed":"#ffdbca","inverse-primary":"#90cfec"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-sm":"0.5rem","space-lg":"1rem","space-md":"0.75rem","space-xl":"1.5rem","space-xs":"0.25rem","gutter":"1rem","margin":"1rem"},"fontFamily":{"label-md":["Inter"],"body-md":["Inter"],"body-lg":["Inter"],"currency-md":["Inter"],"label-sm":["Inter"],"headline-md":["Inter"],"title-sm":["Inter"],"currency-lg":["Inter"],"body-sm":["Inter"],"display-lg":["Inter"],"headline-lg":["Inter"]},"fontSize":{"label-md":["13px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"20px","letterSpacing":"0","fontWeight":"400"}],"body-lg":["16px",{"lineHeight":"24px","letterSpacing":"0","fontWeight":"400"}],"currency-md":["14px",{"lineHeight":"20px","letterSpacing":"0","fontWeight":"600"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"600"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"title-sm":["16px",{"lineHeight":"24px","letterSpacing":"0","fontWeight":"600"}],"currency-lg":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"700"}],"body-sm":["12px",{"lineHeight":"16px","letterSpacing":"0","fontWeight":"400"}],"display-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"600"}]}}}};</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 w-full h-14 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-md"><a class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="reports-hub" href="#"><span class="material-symbols-outlined text-[20px]">arrow_back</span></a><nav class="flex items-center gap-space-md" data-active-classes="text-primary font-bold"><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="reports-hub" href="#">Reports</a><span class="font-label-sm text-label-sm text-outline">/</span><span class="font-headline-md text-headline-md text-on-surface font-semibold">Report Detail</span></nav></div><div class="flex items-center gap-space-md"><button class="h-8 px-space-md bg-surface-container hover:bg-surface-container-high rounded-lg flex items-center gap-space-xs text-primary transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">download</span><span class="font-label-md text-label-md font-semibold">Export</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="w-full pt-14 bg-surface px-space-xl"><div class="flex flex-col w-full pb-space-xl">
+<!-- Top Operational Control Strip -->
+<section class="w-full flex flex-col md:flex-row items-stretch md:items-center justify-between gap-space-md py-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="bg-surface-container p-0.5 rounded flex items-center shadow-sm">
+<button class="h-8 px-space-md rounded bg-surface-container-lowest text-primary shadow-sm font-label-md text-label-md font-semibold transition-all" id="btn-daily" type="button">Daily</button>
+<button class="h-8 px-space-md rounded text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all" id="btn-monthly" type="button">Monthly</button>
+</div>
+<div class="h-4 w-px bg-outline-variant/60 hidden md:block"></div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm tracking-wide uppercase px-space-xs">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>FY 2023-24 • Q3 Audit</span>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm">
+<div class="flex items-center h-9 bg-surface-container-lowest rounded shadow-sm px-space-sm gap-space-xs text-on-surface">
+<span class="material-symbols-outlined text-outline text-[18px]">calendar_today</span>
+<span class="font-body-md text-body-md font-medium text-on-surface">18 Oct 2023 – 24 Oct 2023</span>
+<span class="bg-surface-container px-1.5 py-0.5 rounded font-label-sm text-label-sm text-primary font-semibold ml-space-xs">7 Days</span>
+</div>
+<button class="h-9 px-space-md bg-surface-container-lowest hover:bg-surface-container rounded shadow-sm flex items-center gap-space-xs text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md" type="button">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+<span>Filter</span>
+</button>
+<button class="h-9 px-space-md bg-primary-container text-on-primary rounded shadow-sm hover:opacity-95 active:opacity-90 flex items-center gap-space-xs font-label-md text-label-md transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">print</span>
+<span>Print Daybook</span>
+</button>
+</div>
+</section>
+<!-- Key Metrics & Trend Overview -->
+<section class="w-full grid grid-cols-1 lg:grid-cols-12 gap-space-lg mt-space-sm">
+<!-- 3 Summary KPI Cards Stack / Row -->
+<div class="lg:col-span-4 flex flex-col gap-space-md">
+<!-- Total Gross Revenue -->
+<div class="bg-surface-container-lowest rounded p-space-lg shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute -right-4 -bottom-4 w-24 h-24 bg-primary/5 rounded-full pointer-events-none group-hover:scale-125 transition-transform duration-500"></div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-sm bg-primary"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Total Net Sales</span>
+</div>
+<span class="bg-secondary-container/60 text-on-secondary-container px-1.5 py-0.5 rounded font-label-sm text-label-sm font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>+14.2%
+          </span>
+</div>
+<div class="mt-space-md">
+<div class="font-display-lg text-display-lg font-bold text-on-surface tracking-tight">₹1,84,500</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-1 flex items-center gap-space-xs">
+<span>Vs previous 7 days (₹1,61,500)</span>
+</div>
+</div>
+</div>
+<!-- Bill Volume -->
+<div class="bg-surface-container-lowest rounded p-space-lg shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute -right-4 -bottom-4 w-24 h-24 bg-secondary/5 rounded-full pointer-events-none group-hover:scale-125 transition-transform duration-500"></div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-sm bg-secondary"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Total Bills Count</span>
+</div>
+<span class="bg-surface-container text-on-surface-variant px-1.5 py-0.5 rounded font-label-sm text-label-sm font-medium">B2B + B2C</span>
+</div>
+<div class="mt-space-md">
+<div class="font-display-lg text-display-lg font-bold text-on-surface tracking-tight flex items-baseline gap-space-xs">
+<span>48</span>
+<span class="font-title-sm text-title-sm font-normal text-on-surface-variant">vouchers</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-1 flex items-center gap-space-xs">
+<span class="text-secondary font-medium">100% Tax Compliant</span>
+<span>• 0 voided</span>
+</div>
+</div>
+</div>
+<!-- Average Ticket Size -->
+<div class="bg-surface-container-lowest rounded p-space-lg shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute -right-4 -bottom-4 w-24 h-24 bg-tertiary/5 rounded-full pointer-events-none group-hover:scale-125 transition-transform duration-500"></div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-sm bg-tertiary"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Average Bill Value</span>
+</div>
+<span class="bg-secondary-container/60 text-on-secondary-container px-1.5 py-0.5 rounded font-label-sm text-label-sm font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">north_east</span>+3.8%
+          </span>
+</div>
+<div class="mt-space-md">
+<div class="font-display-lg text-display-lg font-bold text-on-surface tracking-tight">₹3,844</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-1 flex items-center gap-space-xs">
+<span>Median bill: ₹3,560 • Peak: ₹6,800</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 7-Day Performance Bar Chart Canvas -->
+<div class="lg:col-span-8 bg-surface-container-lowest rounded p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-space-md gap-space-xs">
+<div>
+<div class="font-title-sm text-title-sm text-on-surface font-semibold">Daily Sales Realisation</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Daily gross revenue breakdown from 18 Oct through 24 Oct</div>
+</div>
+<div class="flex items-center gap-space-md text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-sm bg-primary"></span>
+<span>Billing Total</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-0.5 bg-outline"></span>
+<span>Target (₹25k)</span>
+</div>
+</div>
+</div>
+<!-- Native SVG Bar Chart with Precise Proportions -->
+<div class="w-full relative mt-space-sm pt-space-xs">
+<svg class="w-full h-56 overflow-visible" fill="none" preserveaspectratio="none" viewbox="0 0 700 220">
+<!-- Horizontal Grid Lines -->
+<line class="text-surface-container-high" stroke="currentColor" stroke-dasharray="3 3" stroke-width="1" x1="0" x2="700" y1="20" y2="20"></line>
+<line class="text-surface-container-high" stroke="currentColor" stroke-dasharray="3 3" stroke-width="1" x1="0" x2="700" y1="70" y2="70"></line>
+<line class="text-surface-container-high" stroke="currentColor" stroke-dasharray="3 3" stroke-width="1" x1="0" x2="700" y1="120" y2="120"></line>
+<line class="text-surface-container-high" stroke="currentColor" stroke-dasharray="3 3" stroke-width="1" x1="0" x2="700" y1="170" y2="170"></line>
+<!-- Baseline -->
+<line class="text-outline-variant" stroke="currentColor" stroke-width="1.5" x1="0" x2="700" y1="200" y2="200"></line>
+<!-- Target Benchmark Line (₹25k mark -> Y = 85) -->
+<line class="text-outline" opacity="0.65" stroke="currentColor" stroke-dasharray="4 4" stroke-width="1.25" x1="0" x2="700" y1="88" y2="88"></line>
+<text class="fill-outline font-label-sm text-[10px] tracking-wider" text-anchor="end" x="696" y="83">TARGET ₹25,000</text>
+<!-- Day 1: 18 Oct - ₹19,500 (Height: 97px -> Y: 103) -->
+<g class="cursor-pointer group/bar">
+<rect class="fill-surface-variant hover:fill-primary-fixed-dim transition-colors" height="97" rx="3" width="50" x="35" y="103"></rect>
+<text class="fill-on-surface font-label-sm text-[11px] font-bold" text-anchor="middle" x="60" y="93">₹19.5k</text>
+<text class="fill-on-surface-variant font-label-sm text-[11px]" text-anchor="middle" x="60" y="215">18 Oct</text>
+<text class="fill-on-surface-variant font-label-sm text-[10px] opacity-75" text-anchor="middle" x="60" y="150">6 bills</text>
+</g>
+<!-- Day 2: 19 Oct - ₹26,500 (Height: 132px -> Y: 68) -->
+<g class="cursor-pointer group/bar">
+<rect class="fill-primary-fixed-dim hover:fill-primary transition-colors" height="132" rx="3" width="50" x="130" y="68"></rect>
+<text class="fill-on-surface font-label-sm text-[11px] font-bold" text-anchor="middle" x="155" y="58">₹26.5k</text>
+<text class="fill-on-surface-variant font-label-sm text-[11px]" text-anchor="middle" x="155" y="215">19 Oct</text>
+<text class="fill-primary font-label-sm text-[10px] font-semibold" text-anchor="middle" x="155" y="130">7 bills</text>
+</g>
+<!-- Day 3: 20 Oct - ₹19,250 (Height: 96px -> Y: 104) -->
+<g class="cursor-pointer group/bar">
+<rect class="fill-surface-variant hover:fill-primary-fixed-dim transition-colors" height="96" rx="3" width="50" x="225" y="104"></rect>
+<text class="fill-on-surface font-label-sm text-[11px] font-bold" text-anchor="middle" x="250" y="94">₹19.2k</text>
+<text class="fill-on-surface-variant font-label-sm text-[11px]" text-anchor="middle" x="250" y="215">20 Oct</text>
+<text class="fill-on-surface-variant font-label-sm text-[10px] opacity-75" text-anchor="middle" x="250" y="150">5 bills</text>
+</g>
+<!-- Day 4: 21 Oct - ₹36,900 (Height: 184px -> Y: 16) - Peak Weekend Day -->
+<g class="cursor-pointer group/bar">
+<rect class="fill-primary hover:fill-primary-container transition-colors" height="184" rx="3" width="50" x="320" y="16"></rect>
+<text class="fill-primary font-label-sm text-[12px] font-extrabold" text-anchor="middle" x="345" y="10">₹36.9k ★</text>
+<text class="fill-on-surface font-label-sm text-[11px] font-bold" text-anchor="middle" x="345" y="215">21 Oct</text>
+<text class="fill-on-primary font-label-sm text-[10px] font-bold" text-anchor="middle" x="345" y="105">9 bills</text>
+</g>
+<!-- Day 5: 22 Oct - ₹21,800 (Height: 109px -> Y: 91) -->
+<g class="cursor-pointer group/bar">
+<rect class="fill-surface-variant hover:fill-primary-fixed-dim transition-colors" height="109" rx="3" width="50" x="415" y="91"></rect>
+<text class="fill-on-surface font-label-sm text-[11px] font-bold" text-anchor="middle" x="440" y="81">₹21.8k</text>
+<text class="fill-on-surface-variant font-label-sm text-[11px]" text-anchor="middle" x="440" y="215">22 Oct</text>
+<text class="fill-on-surface-variant font-label-sm text-[10px] opacity-75" text-anchor="middle" x="440" y="145">6 bills</text>
+</g>
+<!-- Day 6: 23 Oct - ₹28,150 (Height: 140px -> Y: 60) -->
+<g class="cursor-pointer group/bar">
+<rect class="fill-primary-fixed-dim hover:fill-primary transition-colors" height="140" rx="3" width="50" x="510" y="60"></rect>
+<text class="fill-on-surface font-label-sm text-[11px] font-bold" text-anchor="middle" x="535" y="50">₹28.1k</text>
+<text class="fill-on-surface-variant font-label-sm text-[11px]" text-anchor="middle" x="535" y="215">23 Oct</text>
+<text class="fill-primary font-label-sm text-[10px] font-semibold" text-anchor="middle" x="535" y="125">7 bills</text>
+</g>
+<!-- Day 7: 24 Oct - ₹32,400 (Height: 162px -> Y: 38) - Yesterday / Today -->
+<g class="cursor-pointer group/bar">
+<rect class="fill-primary hover:fill-primary-container transition-colors" height="162" rx="3" width="50" x="605" y="38"></rect>
+<text class="fill-primary font-label-sm text-[12px] font-bold" text-anchor="middle" x="630" y="28">₹32.4k</text>
+<text class="fill-on-surface font-label-sm text-[11px] font-bold" text-anchor="middle" x="630" y="215">24 Oct</text>
+<text class="fill-on-primary font-label-sm text-[10px] font-bold" text-anchor="middle" x="630" y="115">8 bills</text>
+</g>
+</svg>
+</div>
+<!-- Quick Tally Footer -->
+<div class="mt-space-md pt-space-sm flex flex-wrap items-center justify-between gap-space-sm bg-surface-container-low px-space-md py-space-xs rounded">
+<div class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-[16px]">check_circle</span>
+<span>Highest volume on Saturday 21 Oct (₹36,900)</span>
+</div>
+<div class="font-label-sm text-label-sm font-semibold text-primary">
+          Day Average: ₹26,357 / day
+        </div>
+</div>
+</div>
+</section>
+<!-- Detailed Ledger Breakdown -->
+<section class="w-full mt-space-lg">
+<div class="bg-surface-container-lowest rounded shadow-sm overflow-hidden">
+<!-- Ledger Header Controls -->
+<div class="p-space-lg flex flex-col sm:flex-row sm:items-center justify-between gap-space-md bg-surface-container-lowest">
+<div>
+<div class="flex items-center gap-space-xs">
+<div class="font-headline-md text-headline-md font-semibold text-on-surface">Daily Breakdown Ledger</div>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">7 Records</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Chronological summary sorted most recent first with reconciliation status</div>
+</div>
+<div class="flex items-center gap-space-xs self-start sm:self-auto">
+<div class="relative">
+<input class="h-8 pl-8 pr- space-sm bg-surface-container-low text-on-surface rounded font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary w-44 md:w-56" placeholder="Search date, voucher..." type="text"/>
+<span class="material-symbols-outlined absolute left-2 top-2 text-outline text-[16px]">search</span>
+</div>
+<button class="h-8 px-space-sm bg-surface-container-low hover:bg-surface-container text-on-surface-variant rounded flex items-center gap-1 font-label-md text-label-md transition-colors" title="Sort Column" type="button">
+<span class="material-symbols-outlined text-[16px]">sort</span>
+<span class="hidden sm:inline">Sort</span>
+</button>
+</div>
+</div>
+<!-- Ledger Table (Strict Clean Utility) -->
+<div class="w-full overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider h-10">
+<th class="py-2 px-space-lg font-semibold w-40">Date</th>
+<th class="py-2 px-space-md font-semibold text-center w-32">Bills Count</th>
+<th class="py-2 px-space-md font-semibold text-right w-44">Total Amount</th>
+<th class="py-2 px-space-md font-semibold text-right w-36 hidden md:table-cell">Avg / Bill</th>
+<th class="py-2 px-space-lg font-semibold w-56">Status • Settlement Notes</th>
+<th class="py-2 px-space-md text-right w-24">Action</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md text-on-surface">
+<!-- Row 1: 24 Oct 2023 -->
+<tr class="hover:bg-surface-container-low/70 transition-colors h-12">
+<td class="py-2 px-space-lg">
+<div class="flex items-center gap-space-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-medium text-on-surface">24 Oct 2023</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-1 py-0.5 rounded ml-1">Tuesday</span>
+</div>
+</td>
+<td class="py-2 px-space-md text-center">
+<span class="inline-flex items-center justify-center font-currency-md text-currency-md bg-surface-container-high px-2.5 py-0.5 rounded text-on-surface">8 bills</span>
+</td>
+<td class="py-2 px-space-md text-right">
+<div class="font-currency-lg text-currency-lg text-on-surface font-bold tracking-tight">₹32,400</div>
+</td>
+<td class="py-2 px-space-md text-right font-currency-md text-currency-md text-on-surface-variant hidden md:table-cell">
+                ₹4,050
+              </td>
+<td class="py-2 px-space-lg">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded font-label-sm text-label-sm font-semibold bg-secondary-container text-on-secondary-container">
+<span class="material-symbols-outlined text-[12px]">verified</span> Settled
+                  </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Full UPI & Cash Recd</span>
+</div>
+</td>
+<td class="py-2 px-space-md text-right">
+<button class="h-7 w-7 inline-flex items-center justify-center rounded text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Row 2: 23 Oct 2023 -->
+<tr class="hover:bg-surface-container-low/70 transition-colors h-12 bg-surface-container-lowest">
+<td class="py-2 px-space-lg">
+<div class="flex items-center gap-space-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-medium text-on-surface">23 Oct 2023</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-1 py-0.5 rounded ml-1">Monday</span>
+</div>
+</td>
+<td class="py-2 px-space-md text-center">
+<span class="inline-flex items-center justify-center font-currency-md text-currency-md bg-surface-container-high px-2.5 py-0.5 rounded text-on-surface">7 bills</span>
+</td>
+<td class="py-2 px-space-md text-right">
+<div class="font-currency-lg text-currency-lg text-on-surface font-bold tracking-tight">₹28,150</div>
+</td>
+<td class="py-2 px-space-md text-right font-currency-md text-currency-md text-on-surface-variant hidden md:table-cell">
+                ₹4,021
+              </td>
+<td class="py-2 px-space-lg">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded font-label-sm text-label-sm font-semibold bg-secondary-container text-on-secondary-container">
+<span class="material-symbols-outlined text-[12px]">verified</span> Settled
+                  </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Direct Bank NEFT batch</span>
+</div>
+</td>
+<td class="py-2 px-space-md text-right">
+<button class="h-7 w-7 inline-flex items-center justify-center rounded text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Row 3: 22 Oct 2023 -->
+<tr class="hover:bg-surface-container-low/70 transition-colors h-12">
+<td class="py-2 px-space-lg">
+<div class="flex items-center gap-space-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-medium text-on-surface">22 Oct 2023</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-1 py-0.5 rounded ml-1">Sunday</span>
+</div>
+</td>
+<td class="py-2 px-space-md text-center">
+<span class="inline-flex items-center justify-center font-currency-md text-currency-md bg-surface-container-high px-2.5 py-0.5 rounded text-on-surface">6 bills</span>
+</td>
+<td class="py-2 px-space-md text-right">
+<div class="font-currency-lg text-currency-lg text-on-surface font-bold tracking-tight">₹21,800</div>
+</td>
+<td class="py-2 px-space-md text-right font-currency-md text-currency-md text-on-surface-variant hidden md:table-cell">
+                ₹3,633
+              </td>
+<td class="py-2 px-space-lg">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded font-label-sm text-label-sm font-semibold bg-tertiary-fixed text-on-tertiary-fixed">
+<span class="material-symbols-outlined text-[12px]">schedule</span> Partial
+                  </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">₹4,200 pending (M/s Sharma)</span>
+</div>
+</td>
+<td class="py-2 px-space-md text-right">
+<button class="h-7 w-7 inline-flex items-center justify-center rounded text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Row 4: 21 Oct 2023 (Peak) -->
+<tr class="hover:bg-surface-container-low/70 transition-colors h-12 bg-primary/5">
+<td class="py-2 px-space-lg">
+<div class="flex items-center gap-space-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span class="font-semibold text-primary">21 Oct 2023</span>
+<span class="font-label-sm text-label-sm bg-primary-fixed text-on-primary-fixed font-bold px-1.5 py-0.5 rounded ml-1">Peak Day</span>
+</div>
+</td>
+<td class="py-2 px-space-md text-center">
+<span class="inline-flex items-center justify-center font-currency-md text-currency-md bg-primary-container text-on-primary px-2.5 py-0.5 rounded font-bold">9 bills</span>
+</td>
+<td class="py-2 px-space-md text-right">
+<div class="font-currency-lg text-currency-lg text-primary font-extrabold tracking-tight">₹36,900</div>
+</td>
+<td class="py-2 px-space-md text-right font-currency-md text-currency-md text-primary font-semibold hidden md:table-cell">
+                ₹4,100
+              </td>
+<td class="py-2 px-space-lg">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded font-label-sm text-label-sm font-semibold bg-secondary-container text-on-secondary-container">
+<span class="material-symbols-outlined text-[12px]">verified</span> Settled
+                  </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Diwali wholesale pre-booking</span>
+</div>
+</td>
+<td class="py-2 px-space-md text-right">
+<button class="h-7 w-7 inline-flex items-center justify-center rounded text-primary hover:bg-primary-fixed transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Row 5: 20 Oct 2023 -->
+<tr class="hover:bg-surface-container-low/70 transition-colors h-12">
+<td class="py-2 px-space-lg">
+<div class="flex items-center gap-space-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-medium text-on-surface">20 Oct 2023</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-1 py-0.5 rounded ml-1">Friday</span>
+</div>
+</td>
+<td class="py-2 px-space-md text-center">
+<span class="inline-flex items-center justify-center font-currency-md text-currency-md bg-surface-container-high px-2.5 py-0.5 rounded text-on-surface">5 bills</span>
+</td>
+<td class="py-2 px-space-md text-right">
+<div class="font-currency-lg text-currency-lg text-on-surface font-bold tracking-tight">₹19,250</div>
+</td>
+<td class="py-2 px-space-md text-right font-currency-md text-currency-md text-on-surface-variant hidden md:table-cell">
+                ₹3,850
+              </td>
+<td class="py-2 px-space-lg">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded font-label-sm text-label-sm font-semibold bg-secondary-container text-on-secondary-container">
+<span class="material-symbols-outlined text-[12px]">verified</span> Settled
+                  </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">E-Way bills verified (3 Nos)</span>
+</div>
+</td>
+<td class="py-2 px-space-md text-right">
+<button class="h-7 w-7 inline-flex items-center justify-center rounded text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Row 6: 19 Oct 2023 -->
+<tr class="hover:bg-surface-container-low/70 transition-colors h-12 bg-surface-container-lowest">
+<td class="py-2 px-space-lg">
+<div class="flex items-center gap-space-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-medium text-on-surface">19 Oct 2023</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-1 py-0.5 rounded ml-1">Thursday</span>
+</div>
+</td>
+<td class="py-2 px-space-md text-center">
+<span class="inline-flex items-center justify-center font-currency-md text-currency-md bg-surface-container-high px-2.5 py-0.5 rounded text-on-surface">7 bills</span>
+</td>
+<td class="py-2 px-space-md text-right">
+<div class="font-currency-lg text-currency-lg text-on-surface font-bold tracking-tight">₹26,500</div>
+</td>
+<td class="py-2 px-space-md text-right font-currency-md text-currency-md text-on-surface-variant hidden md:table-cell">
+                ₹3,785
+              </td>
+<td class="py-2 px-space-lg">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded font-label-sm text-label-sm font-semibold bg-secondary-container text-on-secondary-container">
+<span class="material-symbols-outlined text-[12px]">verified</span> Settled
+                  </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Full POS Card swipe</span>
+</div>
+</td>
+<td class="py-2 px-space-md text-right">
+<button class="h-7 w-7 inline-flex items-center justify-center rounded text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Row 7: 18 Oct 2023 -->
+<tr class="hover:bg-surface-container-low/70 transition-colors h-12">
+<td class="py-2 px-space-lg">
+<div class="flex items-center gap-space-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-medium text-on-surface">18 Oct 2023</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-1 py-0.5 rounded ml-1">Wednesday</span>
+</div>
+</td>
+<td class="py-2 px-space-md text-center">
+<span class="inline-flex items-center justify-center font-currency-md text-currency-md bg-surface-container-high px-2.5 py-0.5 rounded text-on-surface">6 bills</span>
+</td>
+<td class="py-2 px-space-md text-right">
+<div class="font-currency-lg text-currency-lg text-on-surface font-bold tracking-tight">₹19,500</div>
+</td>
+<td class="py-2 px-space-md text-right font-currency-md text-currency-md text-on-surface-variant hidden md:table-cell">
+                ₹3,250
+              </td>
+<td class="py-2 px-space-lg">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded font-label-sm text-label-sm font-semibold bg-secondary-container text-on-secondary-container">
+<span class="material-symbols-outlined text-[12px]">verified</span> Settled
+                  </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Consignment dispatch cleared</span>
+</div>
+</td>
+<td class="py-2 px-space-md text-right">
+<button class="h-7 w-7 inline-flex items-center justify-center rounded text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</td>
+</tr>
+</tbody>
+<!-- Aggregated Summary Total Row -->
+<tfoot>
+<tr class="bg-surface-container font-semibold text-on-surface border-t-2 border-outline-variant/40 h-12">
+<td class="py-2.5 px-space-lg font-headline-md text-headline-md">
+<span>7-Day Aggregation</span>
+</td>
+<td class="py-2.5 px-space-md text-center">
+<span class="font-currency-lg text-currency-lg font-bold text-primary">48 bills</span>
+</td>
+<td class="py-2.5 px-space-md text-right">
+<div class="font-currency-lg text-currency-lg text-primary font-black">₹1,84,500</div>
+</td>
+<td class="py-2.5 px-space-md text-right font-currency-md text-currency-md text-on-surface hidden md:table-cell">
+                ₹3,844 (Avg)
+              </td>
+<td class="py-2.5 px-space-lg" colspan="2">
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span>97.7% Reconciled (₹1,80,300)</span>
+<span class="font-label-sm text-label-sm uppercase font-semibold text-primary mr-space-md">AUDIT READY</span>
+</div>
+</td>
+</tr>
+</tfoot>
+</table>
+</div>
+<!-- Table Pagination / Audit Meta Bar -->
+<div class="p-space-md bg-surface-container-lowest flex flex-col sm:flex-row items-center justify-between gap-space-sm text-on-surface-variant font-body-sm text-body-sm border-t border-surface-container">
+<div class="flex items-center gap-space-xs">
+<span>Displaying 7 of 7 chronological records • Last synchronized 2 mins ago</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="px-space-md h-8 rounded bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span>CSV Export</span>
+</button>
+<button class="px-space-md h-8 rounded bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">picture_as_pdf</span>
+<span>PDF Daybook</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</div>
+<script>
+  // Toggle interaction for Daily / Monthly period view
+  const btnDaily = document.getElementById('btn-daily');
+  const btnMonthly = document.getElementById('btn-monthly');
+
+  if (btnDaily && btnMonthly) {
+    btnDaily.addEventListener('click', () => {
+      btnDaily.className = 'h-8 px-space-md rounded bg-surface-container-lowest text-primary shadow-sm font-label-md text-label-md font-semibold transition-all';
+      btnMonthly.className = 'h-8 px-space-md rounded text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all';
+    });
+
+    btnMonthly.addEventListener('click', () => {
+      btnMonthly.className = 'h-8 px-space-md rounded bg-surface-container-lowest text-primary shadow-sm font-label-md text-label-md font-semibold transition-all';
+      btnDaily.className = 'h-8 px-space-md rounded text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all';
+    });
+  }
+</script></main><footer class="w-full bg-surface-container-low py-space-lg mt-space-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="w-full px-space-xl flex items-center justify-between font-body-sm text-body-sm text-on-surface-variant"><span>ShopManager Enterprise Reporting Module</span><span>Version 4.12.0 • Auto-sync active</span></div></footer></body></html>

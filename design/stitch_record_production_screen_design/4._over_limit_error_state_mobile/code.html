@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Record Production - Over-limit Error State</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Inter', sans-serif; background-color: #F8FAFC; color: #0F172A; }
+  .rounded-custom { border-radius: 4px; }
+</style>
+</head>
+<body class="min-h-screen bg-[#F8FAFC] pb-24 text-[#0F172A] antialiased">
+
+  <!-- Simple Top Bar -->
+  <header class="sticky top-0 z-20 flex h-14 items-center border-b border-[#E2E8F0] bg-white px-4">
+    <button type="button" aria-label="Back" class="mr-3 p-1 text-[#0F172A] hover:bg-[#F1F5F9] rounded-custom">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+    </button>
+    <div class="flex-1">
+      <h1 class="text-base font-semibold text-[#0F172A]">Record Production</h1>
+      <span class="text-[10px] text-[#B91C1C] font-semibold block">Error: Qty used exceeds worker's pending stock</span>
+    </div>
+  </header>
+
+  <!-- Scrollable Form Container -->
+  <main class="max-w-md mx-auto p-4 space-y-4">
+
+    <!-- Critical Error Banner -->
+    <div class="p-3 bg-[#FEF2F2] border border-[#FCA5A5] rounded-custom flex items-center gap-2.5 text-[#B91C1C]">
+      <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+      <div class="text-xs">
+        <span class="font-bold">Hard Limit Exceeded:</span> A worker cannot consume more raw materials than what was issued to them.
+      </div>
+    </div>
+
+    <!-- 1. Worker Summary Chip (Read-only) -->
+    <div class="flex items-center gap-3 p-3 bg-white border border-[#E2E8F0] rounded-custom">
+      <div class="w-10 h-10 rounded-custom bg-[#0D5C75]/10 text-[#0D5C75] font-semibold text-sm flex items-center justify-center shrink-0">
+        RK
+      </div>
+      <div class="flex-1 min-w-0">
+        <div class="flex items-center gap-2">
+          <span class="text-sm font-semibold text-[#0F172A] truncate">Rajesh Kumar</span>
+          <span class="px-2 py-0.5 text-[11px] font-medium bg-[#F1F5F9] text-[#475569] rounded-full">Worker #W-08</span>
+        </div>
+        <p class="text-xs text-[#475569] truncate">Contract Tailoring & Stitching</p>
+      </div>
+      <span class="text-[11px] font-medium text-[#0F766E] bg-[#0F766E]/10 px-2 py-1 rounded-full">2 Active Materials</span>
+    </div>
+
+    <!-- 2 & 3. Production Date & Batch Reference -->
+    <div class="grid grid-cols-2 gap-3">
+      <div>
+        <label class="block text-xs font-semibold text-[#0F172A] mb-1">Production Date <span class="text-[#B91C1C]">*</span></label>
+        <input type="date" value="2025-05-18" class="w-full h-10 px-3 text-xs bg-white border border-[#E2E8F0] rounded-custom focus:outline-none focus:border-[#0D5C75] text-[#0F172A]">
+      </div>
+      <div>
+        <label class="block text-xs font-semibold text-[#0F172A] mb-1">Batch Reference</label>
+        <input type="text" value="Batch #24-B" class="w-full h-10 px-3 text-xs bg-white border border-[#E2E8F0] rounded-custom focus:outline-none focus:border-[#0D5C75] text-[#0F172A]">
+      </div>
+    </div>
+
+    <!-- 4. Raw Materials Used Section (WITH OVER-LIMIT ERROR ON ROW 1) -->
+    <section class="bg-white border border-[#E2E8F0] rounded-custom p-3.5 space-y-3">
+      <div>
+        <div class="flex items-center justify-between">
+          <h2 class="text-sm font-semibold text-[#0F172A]">Raw Materials Used</h2>
+          <span class="text-[11px] font-bold text-[#B91C1C]">1 Over-limit error</span>
+        </div>
+        <p class="text-xs text-[#475569] mt-0.5">From this worker's pending material</p>
+      </div>
+
+      <div class="space-y-3">
+        <!-- Item 1: Rib Fabric with OVER-LIMIT ERROR (Typed 65 vs 50 kg) -->
+        <div class="border-2 border-[#B91C1C] rounded-custom p-3 bg-[#FEF2F2]/60">
+          <div class="flex items-start justify-between gap-2">
+            <label class="flex items-center gap-2.5">
+              <input type="checkbox" checked class="w-4 h-4 rounded text-[#B91C1C] focus:ring-0 border-[#B91C1C]">
+              <div>
+                <span class="text-xs font-bold text-[#0F172A] block">100% Cotton Rib 1x1 (Navy)</span>
+                <span class="text-[11px] text-[#475569]">Pending with worker: <strong class="text-[#B91C1C] font-bold">50 kg</strong></span>
+              </div>
+            </label>
+            <span class="text-[10px] font-bold uppercase px-1.5 py-0.5 bg-[#B91C1C] text-white rounded">+15 kg EXCEEDED</span>
+          </div>
+          
+          <div class="mt-2.5 pt-2.5 border-t border-[#FCA5A5] flex items-center justify-between gap-3">
+            <label class="text-xs font-bold text-[#B91C1C]">Qty Used:</label>
+            <div class="flex items-center gap-1.5 w-36">
+              <input type="number" value="65" step="0.5" class="w-full h-8 px-2.5 text-right font-bold text-xs bg-white border-2 border-[#B91C1C] rounded-custom focus:outline-none text-[#B91C1C]">
+              <span class="text-xs font-bold text-[#B91C1C] shrink-0">kg</span>
+            </div>
+          </div>
+
+          <!-- Hard Block Error Message -->
+          <div class="mt-2.5 p-2 bg-white border border-[#FCA5A5] rounded-custom flex items-start gap-2">
+            <svg class="w-4 h-4 text-[#B91C1C] shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/></svg>
+            <p class="text-xs font-medium text-[#B91C1C] leading-snug">
+              Only <strong>50 kg</strong> pending for this worker. Reduce the quantity to 50 kg or lower to proceed.
+            </p>
+          </div>
+        </div>
+
+        <!-- Item 2: Spun Polyester -->
+        <div class="border border-[#E2E8F0] rounded-custom p-3 bg-white">
+          <div class="flex items-start justify-between gap-2">
+            <label class="flex items-center gap-2.5">
+              <input type="checkbox" checked class="w-4 h-4 rounded text-[#0D5C75] focus:ring-0 border-[#CBD5E1]">
+              <div>
+                <span class="text-xs font-semibold text-[#0F172A] block">Spun Polyester Thread 40/2</span>
+                <span class="text-[11px] text-[#475569]">Pending with worker: <strong>100 cones</strong></span>
+              </div>
+            </label>
+            <span class="text-[10px] font-semibold uppercase px-1.5 py-0.5 bg-[#F1F5F9] text-[#475569] rounded">100 of 100</span>
+          </div>
+          <div class="mt-2.5 pt-2.5 border-t border-[#F1F5F9] flex items-center justify-between gap-3">
+            <label class="text-xs font-medium text-[#475569]">Qty Used:</label>
+            <div class="flex items-center gap-1.5 w-36">
+              <input type="number" value="100" class="w-full h-8 px-2.5 text-right font-medium text-xs bg-[#F8FAFC] border border-[#CBD5E1] rounded-custom text-[#0F172A]">
+              <span class="text-xs text-[#475569] font-medium shrink-0">cones</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Finished Product Section (Valid) -->
+    <section class="bg-white border border-[#E2E8F0] rounded-custom p-3.5 space-y-3">
+      <h2 class="text-sm font-semibold text-[#0F172A]">Finished Product</h2>
+      
+      <div>
+        <label class="block text-xs font-semibold text-[#0F172A] mb-1">Output Item <span class="text-[#B91C1C]">*</span></label>
+        <div class="relative">
+          <select class="w-full h-10 pl-3 pr-8 text-xs bg-white border border-[#CBD5E1] rounded-custom text-[#0F172A] focus:outline-none appearance-none font-medium">
+            <option selected>Men's Polo Pique T-Shirt - Navy / L (SKU: POLO-NVY-L)</option>
+          </select>
+          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2.5 text-[#475569]">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-xs font-semibold text-[#0F172A] mb-1">Quantity Produced <span class="text-[#B91C1C]">*</span></label>
+        <div class="flex items-center gap-2">
+          <input type="number" value="55" min="1" class="flex-1 h-10 px-3 text-sm font-semibold text-[#0F172A] bg-white border border-[#CBD5E1] rounded-custom focus:outline-none">
+          <span class="px-3 h-10 flex items-center bg-[#F1F5F9] border border-[#CBD5E1] rounded-custom text-xs font-semibold text-[#475569]">pcs</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Notes (Optional) -->
+    <div>
+      <label class="block text-xs font-semibold text-[#0F172A] mb-1">Notes <span class="text-xs font-normal text-[#475569]">(Optional)</span></label>
+      <textarea rows="2" class="w-full p-2.5 text-xs bg-white border border-[#E2E8F0] rounded-custom text-[#0F172A]"></textarea>
+    </div>
+
+    <!-- 7. Summary / Preview Card (Blocked state) -->
+    <div class="bg-[#FEF2F2] border border-[#FCA5A5] rounded-custom p-3 flex items-center gap-3">
+      <div class="w-8 h-8 rounded-full bg-[#B91C1C]/15 text-[#B91C1C] flex items-center justify-center shrink-0">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      </div>
+      <div class="flex-1 text-xs">
+        <div class="font-bold text-[#B91C1C]">Form has 1 over-limit error</div>
+        <div class="text-[#7F1D1D] text-[11px] mt-0.5">Resolve material quantity before saving</div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- 8. Fixed Bottom Bar (Save Disabled) -->
+  <footer class="fixed bottom-0 inset-x-0 bg-white border-t border-[#E2E8F0] p-3 z-30">
+    <div class="max-w-md mx-auto flex items-center gap-3">
+      <button type="button" class="w-1/3 h-11 text-xs font-semibold text-[#475569] bg-white border border-[#CBD5E1] rounded-custom">
+        Cancel
+      </button>
+      <button type="button" disabled class="w-2/3 h-11 text-xs font-semibold text-[#94A3B8] bg-[#E2E8F0] cursor-not-allowed rounded-custom flex items-center justify-center gap-2">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"/></svg>
+        Save Production (Blocked)
+      </button>
+    </div>
+  </footer>
+
+</body>
+</html>

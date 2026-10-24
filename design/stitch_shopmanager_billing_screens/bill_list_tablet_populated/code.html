@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>ShopManager Billing</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"tertiary":"#692c00","on-primary-fixed-variant":"#004d64","secondary-fixed-dim":"#80d5cb","on-primary":"#ffffff","on-secondary-container":"#006f67","on-primary-fixed":"#001f2a","error-container":"#ffdad6","background":"#f8f9ff","on-primary-container":"#93d3ef","surface-container-high":"#dce9ff","on-secondary-fixed":"#00201d","primary-fixed-dim":"#90cfec","on-tertiary":"#ffffff","secondary-fixed":"#9cf2e8","primary-container":"#0d5c75","on-surface-variant":"#40484c","on-background":"#0d1c2e","surface-variant":"#d5e3fc","on-secondary":"#ffffff","surface-container":"#e6eeff","on-tertiary-fixed-variant":"#763300","surface-container-highest":"#d5e3fc","on-tertiary-container":"#ffbb97","on-surface":"#0d1c2e","inverse-surface":"#233144","secondary-container":"#99efe5","on-error":"#ffffff","on-error-container":"#93000a","surface-container-low":"#eff4ff","on-tertiary-fixed":"#331200","surface-tint":"#1e667f","inverse-on-surface":"#eaf1ff","error":"#ba1a1a","tertiary-fixed-dim":"#ffb68e","on-secondary-fixed-variant":"#00504a","tertiary-container":"#8d3e00","outline-variant":"#bfc8cd","surface":"#f8f9ff","inverse-primary":"#90cfec","primary":"#004357","outline":"#70787d","surface-bright":"#f8f9ff","tertiary-fixed":"#ffdbca","secondary":"#006a63","primary-fixed":"#bde9ff","surface-container-lowest":"#ffffff","surface-dim":"#ccdbf3"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"gutter":"1rem","margin-desktop":"1.5rem","space-xs":"0.25rem","space-lg":"1rem","space-md":"0.75rem","margin":"1rem","gutter-desktop":"1.25rem","space-xl":"1.5rem","space-sm":"0.5rem"},"fontFamily":{"title-sm":["Inter"],"financial-tabular":["Inter"],"label-md":["Inter"],"headline-md":["Inter"],"body-md":["Inter"],"financial-display":["Inter"],"body-lg":["Inter"],"headline-lg-mobile":["Inter"],"label-sm":["Inter"],"headline-lg":["Inter"],"headline-sm":["Inter"],"body-sm":["Inter"],"title-md":["Inter"]},"fontSize":{"title-sm":["13px",{"lineHeight":"18px","fontWeight":"600"}],"financial-tabular":["13px",{"lineHeight":"18px","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","fontWeight":"500"}],"headline-md":["22px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-md":["13px",{"lineHeight":"18px","fontWeight":"400"}],"financial-display":["24px",{"lineHeight":"30px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-lg":["15px",{"lineHeight":"22px","fontWeight":"400"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"700"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.03em","fontWeight":"600"}],"headline-lg":["30px",{"lineHeight":"38px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-sm":["18px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"title-md":["15px",{"lineHeight":"20px","fontWeight":"600"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 w-full z-50 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-14 w-full px-margin-desktop flex items-center justify-between"><div class="flex items-center gap-space-md"><span class="font-title-md text-title-md text-primary tracking-tight">ShopManager</span><span class="h-4 w-px bg-outline-variant"></span><span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Terminal</span></div><div class="flex items-center gap-space-lg"><nav class="flex items-center gap-space-lg" data-active-classes="text-primary font-title-sm"><a aria-current="page" class="transition-colors text-primary font-title-sm" data-path="bill-list" href="#">Billing</a><a class="font-title-sm text-title-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="create-bill" href="#">New Invoice</a></nav><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-14 px-margin-desktop bg-background min-h-screen"><div class="flex flex-col w-full py-space-xl gap-space-lg">
+<!-- Top Bar -->
+<div class="flex items-center justify-between gap-space-md">
+<div class="flex items-baseline gap-space-md">
+<h1 class="font-headline-md text-headline-md text-on-surface tracking-tight">Billing</h1>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Ledger Overview</span>
+</div>
+<button class="h-[36px] px-space-md bg-primary-container text-on-primary font-title-sm text-title-sm rounded-lg hover:bg-primary transition-colors flex items-center gap-space-xs shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-container focus:ring-offset-2" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>+ New Bill</span>
+</button>
+</div>
+<!-- Search & Filter Controls -->
+<div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-space-md bg-surface-container-lowest p-space-sm rounded-lg shadow-sm">
+<!-- Flexible Search Bar -->
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span>
+<input class="w-full h-[36px] pl-9 pr-space-md bg-surface-container-low text-on-surface placeholder:text-outline font-body-md text-body-md rounded-lg focus:outline-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary-container transition-all" id="ledger-search" placeholder="Search by bill number or customer name" type="text"/>
+</div>
+<!-- Filter Chips -->
+<div class="flex items-center gap-space-xs overflow-x-auto pb-space-xs md:pb-0">
+<button class="filter-chip active flex items-center gap-space-xs px-space-md h-[32px] rounded-full font-label-md text-label-md bg-primary-container text-on-primary transition-all whitespace-nowrap" data-filter="all" type="button">
+<span>All</span>
+<span class="font-financial-tabular text-financial-tabular bg-on-primary/20 px-1.5 py-0.2 rounded-full">9</span>
+</button>
+<button class="filter-chip flex items-center gap-space-xs px-space-md h-[32px] rounded-full font-label-md text-label-md bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-all whitespace-nowrap" data-filter="unpaid" type="button">
+<span>Unpaid</span>
+<span class="font-financial-tabular text-financial-tabular bg-error-container text-on-error-container px-1.5 py-0.2 rounded-full">3</span>
+</button>
+<button class="filter-chip flex items-center gap-space-xs px-space-md h-[32px] rounded-full font-label-md text-label-md bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-all whitespace-nowrap" data-filter="partial" type="button">
+<span>Partial</span>
+<span class="font-financial-tabular text-financial-tabular bg-tertiary-fixed text-on-tertiary-fixed-variant px-1.5 py-0.2 rounded-full">2</span>
+</button>
+<button class="filter-chip flex items-center gap-space-xs px-space-md h-[32px] rounded-full font-label-md text-label-md bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-all whitespace-nowrap" data-filter="paid" type="button">
+<span>Paid</span>
+<span class="font-financial-tabular text-financial-tabular bg-secondary-container text-on-secondary-container px-1.5 py-0.2 rounded-full">4</span>
+</button>
+</div>
+</div>
+<!-- Dense Data Table Container -->
+<div class="bg-surface-container-lowest rounded-lg shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left table-auto">
+<thead>
+<tr class="bg-surface-container-low h-9">
+<th class="py-1 px-space-md font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Bill #</th>
+<th class="py-1 px-space-md font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Customer</th>
+<th class="py-1 px-space-md font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Date</th>
+<th class="py-1 px-space-md font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider text-right">Amount</th>
+<th class="py-1 px-space-md font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider text-center">Status</th>
+<th class="py-1 px-space-md font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider text-right w-12"><span class="sr-only">Actions</span></th>
+</tr>
+</thead>
+<tbody class="divide-y-0" id="bill-table-body">
+<!-- Row 1 -->
+<tr class="h-10 hover:bg-surface-container-low transition-colors duration-100 group" data-status="unpaid">
+<td class="py-1 px-space-md font-title-sm text-title-sm text-on-surface">INV-0089</td>
+<td class="py-1 px-space-md font-body-md text-body-md text-on-surface truncate max-w-[220px]">Ramesh Metal Works</td>
+<td class="py-1 px-space-md font-body-sm text-body-sm text-on-surface-variant whitespace-nowrap">24 Oct 2023</td>
+<td class="py-1 px-space-md font-financial-tabular text-financial-tabular text-on-surface text-right">₹18,450</td>
+<td class="py-1 px-space-md text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-error-container text-on-error-container">Unpaid</span>
+</td>
+<td class="py-1 px-space-md text-right">
+<button aria-label="View invoice INV-0089" class="p-1 rounded-lg text-outline hover:text-on-surface transition-colors flex items-center justify-end ml-auto" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="h-10 hover:bg-surface-container-low transition-colors duration-100 group" data-status="paid">
+<td class="py-1 px-space-md font-title-sm text-title-sm text-on-surface">INV-0088</td>
+<td class="py-1 px-space-md font-body-md text-body-md text-on-surface truncate max-w-[220px]">Sri Krishna Fabricators</td>
+<td class="py-1 px-space-md font-body-sm text-body-sm text-on-surface-variant whitespace-nowrap">23 Oct 2023</td>
+<td class="py-1 px-space-md font-financial-tabular text-financial-tabular text-on-surface text-right">₹42,000</td>
+<td class="py-1 px-space-md text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-secondary-container text-on-secondary-container">Paid</span>
+</td>
+<td class="py-1 px-space-md text-right">
+<button aria-label="View invoice INV-0088" class="p-1 rounded-lg text-outline hover:text-on-surface transition-colors flex items-center justify-end ml-auto" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="h-10 hover:bg-surface-container-low transition-colors duration-100 group" data-status="partial">
+<td class="py-1 px-space-md font-title-sm text-title-sm text-on-surface">INV-0087</td>
+<td class="py-1 px-space-md font-body-md text-body-md text-on-surface truncate max-w-[220px]">Maruti Engineering</td>
+<td class="py-1 px-space-md font-body-sm text-body-sm text-on-surface-variant whitespace-nowrap">22 Oct 2023</td>
+<td class="py-1 px-space-md font-financial-tabular text-financial-tabular text-on-surface text-right">₹12,800</td>
+<td class="py-1 px-space-md text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed-variant">Partial</span>
+</td>
+<td class="py-1 px-space-md text-right">
+<button aria-label="View invoice INV-0087" class="p-1 rounded-lg text-outline hover:text-on-surface transition-colors flex items-center justify-end ml-auto" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="h-10 hover:bg-surface-container-low transition-colors duration-100 group" data-status="paid">
+<td class="py-1 px-space-md font-title-sm text-title-sm text-on-surface">INV-0086</td>
+<td class="py-1 px-space-md font-body-md text-body-md text-on-surface truncate max-w-[220px]">Apex Tooling Corp</td>
+<td class="py-1 px-space-md font-body-sm text-body-sm text-on-surface-variant whitespace-nowrap">21 Oct 2023</td>
+<td class="py-1 px-space-md font-financial-tabular text-financial-tabular text-on-surface text-right">₹7,500</td>
+<td class="py-1 px-space-md text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-secondary-container text-on-secondary-container">Paid</span>
+</td>
+<td class="py-1 px-space-md text-right">
+<button aria-label="View invoice INV-0086" class="p-1 rounded-lg text-outline hover:text-on-surface transition-colors flex items-center justify-end ml-auto" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="h-10 hover:bg-surface-container-low transition-colors duration-100 group" data-status="unpaid">
+<td class="py-1 px-space-md font-title-sm text-title-sm text-on-surface">INV-0085</td>
+<td class="py-1 px-space-md font-body-md text-body-md text-on-surface truncate max-w-[220px]">Varma Precision Works</td>
+<td class="py-1 px-space-md font-body-sm text-body-sm text-on-surface-variant whitespace-nowrap">20 Oct 2023</td>
+<td class="py-1 px-space-md font-financial-tabular text-financial-tabular text-on-surface text-right">₹34,200</td>
+<td class="py-1 px-space-md text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-error-container text-on-error-container">Unpaid</span>
+</td>
+<td class="py-1 px-space-md text-right">
+<button aria-label="View invoice INV-0085" class="p-1 rounded-lg text-outline hover:text-on-surface transition-colors flex items-center justify-end ml-auto" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Row 6 -->
+<tr class="h-10 hover:bg-surface-container-low transition-colors duration-100 group" data-status="paid">
+<td class="py-1 px-space-md font-title-sm text-title-sm text-on-surface">INV-0084</td>
+<td class="py-1 px-space-md font-body-md text-body-md text-on-surface truncate max-w-[220px]">Ganpati Enterprises</td>
+<td class="py-1 px-space-md font-body-sm text-body-sm text-on-surface-variant whitespace-nowrap">19 Oct 2023</td>
+<td class="py-1 px-space-md font-financial-tabular text-financial-tabular text-on-surface text-right">₹8,900</td>
+<td class="py-1 px-space-md text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-secondary-container text-on-secondary-container">Paid</span>
+</td>
+<td class="py-1 px-space-md text-right">
+<button aria-label="View invoice INV-0084" class="p-1 rounded-lg text-outline hover:text-on-surface transition-colors flex items-center justify-end ml-auto" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Row 7 -->
+<tr class="h-10 hover:bg-surface-container-low transition-colors duration-100 group" data-status="partial">
+<td class="py-1 px-space-md font-title-sm text-title-sm text-on-surface">INV-0083</td>
+<td class="py-1 px-space-md font-body-md text-body-md text-on-surface truncate max-w-[220px]">Deccan Heavy Forgings</td>
+<td class="py-1 px-space-md font-body-sm text-body-sm text-on-surface-variant whitespace-nowrap">18 Oct 2023</td>
+<td class="py-1 px-space-md font-financial-tabular text-financial-tabular text-on-surface text-right">₹56,000</td>
+<td class="py-1 px-space-md text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed-variant">Partial</span>
+</td>
+<td class="py-1 px-space-md text-right">
+<button aria-label="View invoice INV-0083" class="p-1 rounded-lg text-outline hover:text-on-surface transition-colors flex items-center justify-end ml-auto" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Row 8 -->
+<tr class="h-10 hover:bg-surface-container-low transition-colors duration-100 group" data-status="paid">
+<td class="py-1 px-space-md font-title-sm text-title-sm text-on-surface">INV-0082</td>
+<td class="py-1 px-space-md font-body-md text-body-md text-on-surface truncate max-w-[220px]">Balaji Machining Ltd</td>
+<td class="py-1 px-space-md font-body-sm text-body-sm text-on-surface-variant whitespace-nowrap">16 Oct 2023</td>
+<td class="py-1 px-space-md font-financial-tabular text-financial-tabular text-on-surface text-right">₹15,300</td>
+<td class="py-1 px-space-md text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-secondary-container text-on-secondary-container">Paid</span>
+</td>
+<td class="py-1 px-space-md text-right">
+<button aria-label="View invoice INV-0082" class="p-1 rounded-lg text-outline hover:text-on-surface transition-colors flex items-center justify-end ml-auto" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Row 9 -->
+<tr class="h-10 hover:bg-surface-container-low transition-colors duration-100 group" data-status="unpaid">
+<td class="py-1 px-space-md font-title-sm text-title-sm text-on-surface">INV-0081</td>
+<td class="py-1 px-space-md font-body-md text-body-md text-on-surface truncate max-w-[220px]">Om Steels &amp; Hardware</td>
+<td class="py-1 px-space-md font-body-sm text-body-sm text-on-surface-variant whitespace-nowrap">15 Oct 2023</td>
+<td class="py-1 px-space-md font-financial-tabular text-financial-tabular text-on-surface text-right">₹22,100</td>
+<td class="py-1 px-space-md text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-error-container text-on-error-container">Unpaid</span>
+</td>
+<td class="py-1 px-space-md text-right">
+<button aria-label="View invoice INV-0081" class="p-1 rounded-lg text-outline hover:text-on-surface transition-colors flex items-center justify-end ml-auto" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    const searchInput = document.getElementById('ledger-search');
+    const tableBody = document.getElementById('bill-table-body');
+    const rows = tableBody ? Array.from(tableBody.querySelectorAll('tr')) : [];
+    const filterButtons = Array.from(document.querySelectorAll('.filter-chip'));
+    let activeFilter = 'all';
+
+    function applyFilterAndSearch() {
+      const query = (searchInput ? searchInput.value : '').toLowerCase().trim();
+
+      rows.forEach(row => {
+        const status = row.getAttribute('data-status');
+        const billNo = (row.children[0]?.textContent || '').toLowerCase();
+        const customer = (row.children[1]?.textContent || '').toLowerCase();
+
+        const matchesStatus = (activeFilter === 'all' || status === activeFilter);
+        const matchesQuery = query === '' || billNo.includes(query) || customer.includes(query);
+
+        if (matchesStatus && matchesQuery) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    }
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => {
+          b.classList.remove('bg-primary-container', 'text-on-primary');
+          b.classList.add('bg-surface-container', 'text-on-surface-variant');
+        });
+        btn.classList.add('bg-primary-container', 'text-on-primary');
+        btn.classList.remove('bg-surface-container', 'text-on-surface-variant');
+
+        activeFilter = btn.getAttribute('data-filter') || 'all';
+        applyFilterAndSearch();
+      });
+    });
+
+    if (searchInput) {
+      searchInput.addEventListener('input', applyFilterAndSearch);
+    }
+  })();
+</script></main><footer class="w-full bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] mt-auto"><div class="w-full px-margin-desktop h-12 flex items-center justify-between"><div class="flex items-center gap-space-md text-on-surface-variant font-label-sm text-label-sm"><span>ShopManager ERP</span><span>•</span><span>Point of Sale System</span></div><div class="font-financial-tabular text-financial-tabular text-on-surface-variant">Terminal #01 • Active Shift</div></div></footer></body></html>

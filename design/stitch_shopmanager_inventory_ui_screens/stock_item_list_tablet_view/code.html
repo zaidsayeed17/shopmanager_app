@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-error":"#ffffff","error":"#ba1a1a","inverse-on-surface":"#eef0ff","surface-dim":"#d2d9f4","primary":"#004357","outline":"#70787d","on-tertiary-container":"#c7c4ff","primary-fixed-dim":"#90cfec","secondary-fixed":"#9cf2e8","surface-container-highest":"#dae2fd","surface-container-lowest":"#ffffff","on-primary-fixed":"#001f2a","tertiary":"#2d1bb7","on-secondary-fixed":"#00201d","error-container":"#ffdad6","secondary-container":"#99efe5","on-primary-fixed-variant":"#004d64","surface-bright":"#faf8ff","tertiary-fixed-dim":"#c3c0ff","outline-variant":"#bfc8cd","on-secondary-fixed-variant":"#00504a","surface-variant":"#dae2fd","tertiary-fixed":"#e3dfff","on-secondary-container":"#006f67","on-primary":"#ffffff","primary-container":"#0d5c75","surface-tint":"#1e667f","surface-container":"#eaedff","surface":"#faf8ff","on-surface-variant":"#40484c","on-primary-container":"#93d3ef","surface-container-low":"#f2f3ff","surface-container-high":"#e2e7ff","on-secondary":"#ffffff","background":"#faf8ff","on-tertiary-fixed-variant":"#372abf","secondary":"#006a63","on-tertiary":"#ffffff","secondary-fixed-dim":"#80d5cb","tertiary-container":"#473cce","on-error-container":"#93000a","primary-fixed":"#bde9ff","inverse-primary":"#90cfec","inverse-surface":"#283044","on-tertiary-fixed":"#100069","on-surface":"#131b2e","on-background":"#131b2e"},borderRadius:{DEFAULT:"0.125rem",lg:"0.25rem",xl:"0.5rem",full:"0.75rem"},spacing:{"gutter-desktop":"1.5rem","margin-desktop":"2rem",margin:"1rem","margin-tablet":"1.5rem","gutter-tablet":"1.25rem","space-sm":"0.5rem","space-xl":"2rem","space-xs":"0.25rem","space-md":"1rem","space-lg":"1.5rem",gutter:"1rem"},fontFamily:{"label-lg":["Inter"],"headline-lg-mobile":["Inter"],"body-sm":["Inter"],"headline-sm":["Inter"],"title-md":["Inter"],"currency-display":["Inter"],"headline-md":["Inter"],"label-md":["Inter"],"title-sm":["Inter"],"headline-lg":["Inter"],"label-sm":["Inter"],"body-md":["Inter"],"body-lg":["Inter"]},fontSize:{"label-lg":["14px",{lineHeight:"20px",fontWeight:"500"}],"headline-lg-mobile":["24px",{lineHeight:"32px",fontWeight:"700"}],"body-sm":["12px",{lineHeight:"16px",fontWeight:"400"}],"headline-sm":["18px",{lineHeight:"24px",fontWeight:"600"}],"title-md":["16px",{lineHeight:"22px",fontWeight:"600"}],"currency-display":["20px",{lineHeight:"26px",fontWeight:"700"}],"headline-md":["22px",{lineHeight:"28px",fontWeight:"600"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.02em",fontWeight:"600"}],"title-sm":["14px",{lineHeight:"20px",fontWeight:"600"}],"headline-lg":["30px",{lineHeight:"38px",fontWeight:"700"}],"label-sm":["11px",{lineHeight:"14px",letterSpacing:"0.03em",fontWeight:"600"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest border-r border-outline-variant z-50 flex flex-col justify-between"><div class="flex flex-col"><div class="h-14 px-space-md border-b border-outline-variant flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary"><span class="material-symbols-outlined text-[20px]">precision_manufacturing</span></div><div class="flex flex-col"><span class="font-title-md text-title-md text-on-surface font-bold tracking-tight leading-none">ShopManager</span><span class="font-label-sm text-label-sm text-on-surface-variant">MSME Workshop OS</span></div></div><div class="p-space-sm"><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary font-bold shadow-sm"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span>Dashboard</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg transition-colors bg-primary-container text-on-primary font-bold shadow-sm" data-path="stock" href="#"><span class="material-symbols-outlined text-[20px]">inventory_2</span><span>Stock</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="production" href="#"><span class="material-symbols-outlined text-[20px]">factory</span><span>Production</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="sales" href="#"><span class="material-symbols-outlined text-[20px]">point_of_sale</span><span>Sales</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span>Settings</span></a></nav></div></div><div class="p-space-sm border-t border-outline-variant bg-surface-container-low/50"><div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-lowest border border-outline-variant"><div class="flex items-center gap-space-sm"><span class="w-2.5 h-2.5 rounded-full bg-secondary"></span><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface font-semibold">Unit 1: Main Shed</span><span class="font-body-sm text-body-sm text-on-surface-variant">GSTIN Active</span></div></div><span class="material-symbols-outlined text-outline text-[18px]">swap_horiz</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-14 bg-surface-container-lowest border-b border-outline-variant z-40 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-md w-96"><div class="relative w-full flex items-center"><span class="material-symbols-outlined absolute left-space-sm text-outline text-[18px]">search</span><input class="w-full pl-8 pr-space-md py-space-xs bg-surface-container-lowest border border-outline-variant rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all" placeholder="Search inventory, batch, SKU, ledger..." type="search"/></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded-full border border-secondary/30 bg-secondary-container/20 text-on-secondary-container"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold">Shop Floor Live</span></div><div class="h-4 w-px bg-outline-variant"></div><button class="p-space-xs rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">barcode_scanner</span></button><button class="relative p-space-xs rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-error"></span></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="flex flex-col text-right hidden sm:flex"><span class="font-label-sm text-label-sm text-on-surface font-semibold leading-tight">Rajesh Sharma</span><span class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Plant Supervisor</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-14 px-gutter-desktop min-h-screen bg-surface"><div class="flex flex-col w-full">
+<div class="py-space-md flex flex-col gap-space-md">
+<!-- Top Action & Context Header -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md pb-space-xs">
+<div>
+<div class="flex items-center gap-space-xs">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Stock Inventory</h1>
+<span class="inline-flex items-center justify-center px-space-xs py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">Unit 1 Central</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">Manage raw materials and finished goods stock levels</p>
+</div>
+<div class="flex items-center gap-space-sm self-start md:self-auto">
+<button class="inline-flex items-center gap-space-xs px-space-md py-space-sm bg-surface-container-lowest text-on-surface rounded-lg shadow-sm hover:bg-surface-container transition-colors font-label-lg text-label-lg" type="button">
+<span class="material-symbols-outlined text-[18px]">file_download</span>
+<span>Export CSV</span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-space-md py-space-sm bg-surface-container-lowest text-on-surface rounded-lg shadow-sm hover:bg-surface-container transition-colors font-label-lg text-label-lg" type="button">
+<span class="material-symbols-outlined text-[18px]">print</span>
+<span>Print Summary</span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-space-md py-space-sm bg-primary-container text-on-primary rounded-lg shadow-sm hover:bg-primary transition-all font-label-lg text-label-lg font-semibold" type="button">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>Add Item</span>
+</button>
+</div>
+</div>
+<!-- KPI / Overview Metrics Bar (Dense shop floor style) -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-sm">
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant block">Total Items Tracked</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold mt-1 block">14 SKUs</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">8 Raw • 6 Finished</span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[22px]">inventory</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant block">Inventory Valuation</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold mt-1 block">₹14,82,450</span>
+<span class="font-body-sm text-body-sm text-secondary font-medium">Updated 10m ago</span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]">payments</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant block">Low Stock Alerts</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold mt-1 block text-amber-700">3 Items</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Requires indent creation</span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-amber-700">
+<span class="material-symbols-outlined text-[22px]">warning</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant block">Production Locked</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold mt-1 block">1 Item Out</span>
+<span class="font-body-sm text-body-sm text-error font-medium">Batch #B-902 paused</span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[22px]">error</span>
+</div>
+</div>
+</div>
+<!-- Filter Controls Toolbar -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-md">
+<!-- Search Input -->
+<div class="relative flex-1 min-w-[280px]">
+<span class="material-symbols-outlined absolute left-space-sm top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span>
+<input class="w-full pl-8 pr-space-md py-space-sm bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary-container transition-all" id="itemSearchInput" placeholder="Search materials or products by name, code or category..." type="text"/>
+</div>
+<!-- Segmented Tabs & Toggles -->
+<div class="flex flex-wrap items-center gap-space-xs">
+<div class="inline-flex p-0.5 rounded-lg bg-surface-container-low" id="tabButtonGroup">
+<button class="px-space-md py-space-xs rounded-lg font-label-md text-label-md transition-all bg-surface-container-lowest text-on-surface shadow-sm font-bold" data-filter="all" type="button">
+            All Items (14)
+          </button>
+<button class="px-space-md py-space-xs rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" data-filter="raw" type="button">
+            Raw Materials (8)
+          </button>
+<button class="px-space-md py-space-xs rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" data-filter="finished" type="button">
+            Finished Products (6)
+          </button>
+</div>
+<button class="inline-flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg font-label-md text-label-md text-on-surface-variant bg-surface-container-low hover:bg-surface-container transition-colors" id="lowStockToggle" type="button">
+<span class="material-symbols-outlined text-[16px] text-amber-700">warning</span>
+<span>Low Stock Only (3)</span>
+</button>
+<div class="h-6 w-px bg-surface-container mx-space-xs hidden sm:block"></div>
+<button class="p-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" title="Filter columns" type="button">
+<span class="material-symbols-outlined text-[20px]">view_column</span>
+</button>
+</div>
+</div>
+<!-- Data Table Container -->
+<div class="bg-surface-container-lowest rounded-lg shadow-sm overflow-hidden flex flex-col">
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left font-body-sm text-body-sm text-on-surface">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider select-none">
+<th class="py-space-sm px-space-md w-10 text-center" scope="col">
+<input class="rounded text-primary-container focus:ring-0 cursor-pointer" id="selectAllCheckbox" type="checkbox"/>
+</th>
+<th class="py-space-sm px-space-md" scope="col">Item Name & Code</th>
+<th class="py-space-sm px-space-md" scope="col">Type</th>
+<th class="py-space-sm px-space-md" scope="col">Category</th>
+<th class="py-space-sm px-space-md text-right" scope="col">Current Stock</th>
+<th class="py-space-sm px-space-md text-right" scope="col">Min Stock</th>
+<th class="py-space-sm px-space-md text-right" scope="col">Unit Rate (₹)</th>
+<th class="py-space-sm px-space-md text-center" scope="col">Stock Status</th>
+<th class="py-space-sm px-space-md text-right" scope="col">Actions</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md divide-y-0" id="inventoryTableBody">
+<!-- Row 1: Low Stock Raw Material -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group" data-status="low" data-type="raw">
+<td class="py-space-sm px-space-md text-center">
+<input class="row-checkbox rounded text-primary-container focus:ring-0 cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm font-semibold text-on-surface group-hover:text-primary-container transition-colors">Cotton Rib 2x2 Bleached</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-mono">RM-TEX-0042</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="inline-flex items-center px-space-xs py-0.5 rounded-full bg-secondary-container/40 text-on-secondary-container font-label-sm text-label-sm font-semibold">Raw Material</span>
+</td>
+<td class="py-space-sm px-space-md font-body-sm text-body-sm text-on-surface">Fabric / Knits</td>
+<td class="py-space-sm px-space-md text-right font-semibold text-amber-700">
+                124.50 <span class="font-normal text-on-surface-variant text-label-sm">kg</span>
+</td>
+<td class="py-space-sm px-space-md text-right text-on-surface-variant">250.00 kg</td>
+<td class="py-space-sm px-space-md text-right font-medium">₹320.00</td>
+<td class="py-space-sm px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded-full bg-amber-100 text-amber-900 font-label-sm text-label-sm font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span>Low Stock
+                </span>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container" title="Stock Adjustment" type="button">
+<span class="material-symbols-outlined text-[18px]">sync_alt</span>
+</button>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container" title="Edit Item" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container" title="More Options" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: In Stock Finished Product -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group" data-status="ok" data-type="finished">
+<td class="py-space-sm px-space-md text-center">
+<input class="row-checkbox rounded text-primary-container focus:ring-0 cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm font-semibold text-on-surface group-hover:text-primary-container transition-colors">Men's Classic Polo (Navy - L)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-mono">FG-APP-1088</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="inline-flex items-center px-space-xs py-0.5 rounded-full bg-surface-container-high text-tertiary font-label-sm text-label-sm font-semibold">Finished Product</span>
+</td>
+<td class="py-space-sm px-space-md font-body-sm text-body-sm text-on-surface">Apparel / Polos</td>
+<td class="py-space-sm px-space-md text-right font-semibold text-on-surface">
+                840 <span class="font-normal text-on-surface-variant text-label-sm">pcs</span>
+</td>
+<td class="py-space-sm px-space-md text-right text-on-surface-variant">150 pcs</td>
+<td class="py-space-sm px-space-md text-right font-medium">₹540.00</td>
+<td class="py-space-sm px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-label-sm text-label-sm font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>In Stock
+                </span>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container" title="Stock Adjustment" type="button">
+<span class="material-symbols-outlined text-[18px]">sync_alt</span>
+</button>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container" title="Edit Item" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container" title="More Options" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Out of Stock / Critical Raw Material -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group" data-status="critical" data-type="raw">
+<td class="py-space-sm px-space-md text-center">
+<input class="row-checkbox rounded text-primary-container focus:ring-0 cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm font-semibold text-on-surface group-hover:text-primary-container transition-colors">Polyester Thread 40/2 (Optic White)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-mono">RM-TRM-0112</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="inline-flex items-center px-space-xs py-0.5 rounded-full bg-secondary-container/40 text-on-secondary-container font-label-sm text-label-sm font-semibold">Raw Material</span>
+</td>
+<td class="py-space-sm px-space-md font-body-sm text-body-sm text-on-surface">Trims & Accessories</td>
+<td class="py-space-sm px-space-md text-right font-semibold text-error">
+                0 <span class="font-normal text-on-surface-variant text-label-sm">spools</span>
+</td>
+<td class="py-space-sm px-space-md text-right text-on-surface-variant">50 spools</td>
+<td class="py-space-sm px-space-md text-right font-medium">₹85.00</td>
+<td class="py-space-sm px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>Critical / Nil
+                </span>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container" title="Stock Adjustment" type="button">
+<span class="material-symbols-outlined text-[18px]">sync_alt</span>
+</button>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container" title="Edit Item" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container" title="More Options" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Finished Product In Stock -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group" data-status="ok" data-type="finished">
+<td class="py-space-sm px-space-md text-center">
+<input class="row-checkbox rounded text-primary-container focus:ring-0 cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm font-semibold text-on-surface group-hover:text-primary-container transition-colors">Round Neck Tee 180 GSM (Black - M)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-mono">FG-APP-0932</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="inline-flex items-center px-space-xs py-0.5 rounded-full bg-surface-container-high text-tertiary font-label-sm text-label-sm font-semibold">Finished Product</span>
+</td>
+<td class="py-space-sm px-space-md font-body-sm text-body-sm text-on-surface">Apparel / T-Shirts</td>
+<td class="py-space-sm px-space-md text-right font-semibold text-on-surface">
+                1,120 <span class="font-normal text-on-surface-variant text-label-sm">pcs</span>
+</td>
+<td class="py-space-sm px-space-md text-right text-on-surface-variant">200 pcs</td>
+<td class="py-space-sm px-space-md text-right font-medium">₹295.00</td>
+<td class="py-space-sm px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-label-sm text-label-sm font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>In Stock
+                </span>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container" title="Stock Adjustment" type="button">
+<span class="material-symbols-outlined text-[18px]">sync_alt</span>
+</button>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container" title="Edit Item" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container" title="More Options" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5: Raw Material Low Stock -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group" data-status="low" data-type="raw">
+<td class="py-space-sm px-space-md text-center">
+<input class="row-checkbox rounded text-primary-container focus:ring-0 cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm font-semibold text-on-surface group-hover:text-primary-container transition-colors">Elastic Tape 1.5 inch Knitted</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-mono">RM-TRM-0309</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="inline-flex items-center px-space-xs py-0.5 rounded-full bg-secondary-container/40 text-on-secondary-container font-label-sm text-label-sm font-semibold">Raw Material</span>
+</td>
+<td class="py-space-sm px-space-md font-body-sm text-body-sm text-on-surface">Elastic & Webbings</td>
+<td class="py-space-sm px-space-md text-right font-semibold text-amber-700">
+                380.00 <span class="font-normal text-on-surface-variant text-label-sm">mtr</span>
+</td>
+<td class="py-space-sm px-space-md text-right text-on-surface-variant">500.00 mtr</td>
+<td class="py-space-sm px-space-md text-right font-medium">₹12.40</td>
+<td class="py-space-sm px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded-full bg-amber-100 text-amber-900 font-label-sm text-label-sm font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span>Low Stock
+                </span>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container" title="Stock Adjustment" type="button">
+<span class="material-symbols-outlined text-[18px]">sync_alt</span>
+</button>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container" title="Edit Item" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container" title="More Options" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 6: Raw Material In Stock -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group" data-status="ok" data-type="raw">
+<td class="py-space-sm px-space-md text-center">
+<input class="row-checkbox rounded text-primary-container focus:ring-0 cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm font-semibold text-on-surface group-hover:text-primary-container transition-colors">Naada Drawstring (Cotton Braided)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-mono">RM-TRM-0441</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="inline-flex items-center px-space-xs py-0.5 rounded-full bg-secondary-container/40 text-on-secondary-container font-label-sm text-label-sm font-semibold">Raw Material</span>
+</td>
+<td class="py-space-sm px-space-md font-body-sm text-body-sm text-on-surface">Cords & Laces</td>
+<td class="py-space-sm px-space-md text-right font-semibold text-on-surface">
+                1,850.00 <span class="font-normal text-on-surface-variant text-label-sm">mtr</span>
+</td>
+<td class="py-space-sm px-space-md text-right text-on-surface-variant">300.00 mtr</td>
+<td class="py-space-sm px-space-md text-right font-medium">₹4.20</td>
+<td class="py-space-sm px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-label-sm text-label-sm font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>In Stock
+                </span>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container" title="Stock Adjustment" type="button">
+<span class="material-symbols-outlined text-[18px]">sync_alt</span>
+</button>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container" title="Edit Item" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container" title="More Options" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 7: Raw Material In Stock Packaging -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group" data-status="ok" data-type="raw">
+<td class="py-space-sm px-space-md text-center">
+<input class="row-checkbox rounded text-primary-container focus:ring-0 cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm font-semibold text-on-surface group-hover:text-primary-container transition-colors">Corrugated Master Carton (7-Ply)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-mono">RM-PKG-0019</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="inline-flex items-center px-space-xs py-0.5 rounded-full bg-secondary-container/40 text-on-secondary-container font-label-sm text-label-sm font-semibold">Raw Material</span>
+</td>
+<td class="py-space-sm px-space-md font-body-sm text-body-sm text-on-surface">Packaging Materials</td>
+<td class="py-space-sm px-space-md text-right font-semibold text-on-surface">
+                620 <span class="font-normal text-on-surface-variant text-label-sm">box</span>
+</td>
+<td class="py-space-sm px-space-md text-right text-on-surface-variant">100 box</td>
+<td class="py-space-sm px-space-md text-right font-medium">₹68.50</td>
+<td class="py-space-sm px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-label-sm text-label-sm font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>In Stock
+                </span>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container" title="Stock Adjustment" type="button">
+<span class="material-symbols-outlined text-[18px]">sync_alt</span>
+</button>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container" title="Edit Item" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container" title="More Options" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 8: Finished Product Low Stock -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group" data-status="low" data-type="finished">
+<td class="py-space-sm px-space-md text-center">
+<input class="row-checkbox rounded text-primary-container focus:ring-0 cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm font-semibold text-on-surface group-hover:text-primary-container transition-colors">Cotton Jogger Pants (Melange Grey - XL)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-mono">FG-APP-2041</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="inline-flex items-center px-space-xs py-0.5 rounded-full bg-surface-container-high text-tertiary font-label-sm text-label-sm font-semibold">Finished Product</span>
+</td>
+<td class="py-space-sm px-space-md font-body-sm text-body-sm text-on-surface">Apparel / Bottomwear</td>
+<td class="py-space-sm px-space-md text-right font-semibold text-amber-700">
+                48 <span class="font-normal text-on-surface-variant text-label-sm">pcs</span>
+</td>
+<td class="py-space-sm px-space-md text-right text-on-surface-variant">75 pcs</td>
+<td class="py-space-sm px-space-md text-right font-medium">₹620.00</td>
+<td class="py-space-sm px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded-full bg-amber-100 text-amber-900 font-label-sm text-label-sm font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span>Low Stock
+                </span>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container" title="Stock Adjustment" type="button">
+<span class="material-symbols-outlined text-[18px]">sync_alt</span>
+</button>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container" title="Edit Item" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container" title="More Options" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 9: Inactive SKU Item -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group opacity-70" data-status="inactive" data-type="raw">
+<td class="py-space-sm px-space-md text-center">
+<input class="row-checkbox rounded text-primary-container focus:ring-0 cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm font-semibold text-on-surface line-through">Lycra Spandex Yarn 70D</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-mono">RM-TEX-0012 (Archived)</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="inline-flex items-center px-space-xs py-0.5 rounded-full bg-secondary-container/40 text-on-secondary-container font-label-sm text-label-sm font-semibold">Raw Material</span>
+</td>
+<td class="py-space-sm px-space-md font-body-sm text-body-sm text-on-surface">Yarns / Synthetic</td>
+<td class="py-space-sm px-space-md text-right font-semibold text-on-surface-variant">
+                0.00 <span class="font-normal text-on-surface-variant text-label-sm">kg</span>
+</td>
+<td class="py-space-sm px-space-md text-right text-on-surface-variant">0.00 kg</td>
+<td class="py-space-sm px-space-md text-right font-medium">₹410.00</td>
+<td class="py-space-sm px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>Inactive
+                </span>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container" title="Stock Adjustment" type="button">
+<span class="material-symbols-outlined text-[18px]">sync_alt</span>
+</button>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container" title="Edit Item" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container" title="More Options" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 10: Finished Product In Stock -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group" data-status="ok" data-type="finished">
+<td class="py-space-sm px-space-md text-center">
+<input class="row-checkbox rounded text-primary-container focus:ring-0 cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm font-semibold text-on-surface group-hover:text-primary-container transition-colors">Crew Neck Sweatshirt (Olive - M)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-mono">FG-APP-3310</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="inline-flex items-center px-space-xs py-0.5 rounded-full bg-surface-container-high text-tertiary font-label-sm text-label-sm font-semibold">Finished Product</span>
+</td>
+<td class="py-space-sm px-space-md font-body-sm text-body-sm text-on-surface">Apparel / Winterwear</td>
+<td class="py-space-sm px-space-md text-right font-semibold text-on-surface">
+                430 <span class="font-normal text-on-surface-variant text-label-sm">pcs</span>
+</td>
+<td class="py-space-sm px-space-md text-right text-on-surface-variant">100 pcs</td>
+<td class="py-space-sm px-space-md text-right font-medium">₹780.00</td>
+<td class="py-space-sm px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-label-sm text-label-sm font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>In Stock
+                </span>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container" title="Stock Adjustment" type="button">
+<span class="material-symbols-outlined text-[18px]">sync_alt</span>
+</button>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container" title="Edit Item" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container" title="More Options" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Pagination & Summary Callout -->
+<div class="px-space-md py-space-sm bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-md">
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+            Showing <strong class="text-on-surface font-semibold">1-10</strong> of <strong class="text-on-surface font-semibold">14</strong> items
+          </span>
+<div class="h-4 w-px bg-surface-container hidden sm:block"></div>
+<div class="hidden sm:flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant">
+<span>Page valuation:</span>
+<strong class="text-on-surface font-semibold">₹11,48,220</strong>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="flex items-center gap-1">
+<button class="p-1 rounded-lg text-outline bg-surface-container-lowest opacity-50 cursor-not-allowed" disabled="" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="px-2.5 py-0.5 rounded-lg bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold" type="button">
+              1
+            </button>
+<button class="px-2.5 py-0.5 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container font-label-sm text-label-sm transition-colors" type="button">
+              2
+            </button>
+<button class="p-1 rounded-lg text-on-surface bg-surface-container-lowest hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+<select class="py-1 px-space-sm bg-surface-container-lowest text-on-surface rounded-lg font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-primary-container">
+<option>10 / page</option>
+<option>25 / page</option>
+<option>50 / page</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Quick Stock Adjustment Modal / Drawer Trigger Hint -->
+<div class="bg-surface-container-low p-space-md rounded-lg flex flex-col md:flex-row items-center justify-between gap-space-sm text-on-surface">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[20px]">qr_code_scanner</span>
+</div>
+<div>
+<span class="font-title-sm text-title-sm font-semibold">Batch Barcode Gun Ready</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Scan GS1/EAN item labels on counter scale to trigger direct inward/outward registers</p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-mono text-label-sm text-on-surface-variant bg-surface-container-lowest px-2 py-1 rounded">F4 Inward</span>
+<span class="font-mono text-label-sm text-on-surface-variant bg-surface-container-lowest px-2 py-1 rounded">F8 Issue Batch</span>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // High efficiency inline micro-interactions for shop floor tablet/desktop view
+  (function initStockView() {
+    // 1. Highlight active navigation item for Stock module
+    const stockNavLink = document.querySelector('nav a[data-path="stock"]');
+    if (stockNavLink) {
+      stockNavLink.classList.add('bg-primary-container', 'text-on-primary', 'font-bold', 'shadow-sm');
+      stockNavLink.classList.remove('text-on-surface-variant', 'hover:bg-surface-container-low');
+    }
+
+    // 2. Select All Checkboxes behavior
+    const selectAll = document.getElementById('selectAllCheckbox');
+    const rowCheckboxes = document.querySelectorAll('.row-checkbox');
+    
+    if (selectAll) {
+      selectAll.addEventListener('change', (e) => {
+        rowCheckboxes.forEach(cb => {
+          cb.checked = e.target.checked;
+          const tr = cb.closest('tr');
+          if (tr) {
+            tr.classList.toggle('bg-surface-container', e.target.checked);
+          }
+        });
+      });
+    }
+
+    rowCheckboxes.forEach(cb => {
+      cb.addEventListener('change', () => {
+        const tr = cb.closest('tr');
+        if (tr) {
+          tr.classList.toggle('bg-surface-container', cb.checked);
+        }
+      });
+    });
+
+    // 3. Category Tab filtering
+    const tabButtons = document.querySelectorAll('#tabButtonGroup button');
+    const rows = document.querySelectorAll('#inventoryTableBody tr');
+    let currentTypeFilter = 'all';
+    let lowStockOnly = false;
+
+    function applyFilters() {
+      const query = (document.getElementById('itemSearchInput')?.value || '').toLowerCase().trim();
+
+      rows.forEach(row => {
+        const rowType = row.getAttribute('data-type');
+        const rowStatus = row.getAttribute('data-status');
+        const text = row.innerText.toLowerCase();
+
+        const matchType = (currentTypeFilter === 'all') || (rowType === currentTypeFilter);
+        const matchLow = !lowStockOnly || (rowStatus === 'low' || rowStatus === 'critical');
+        const matchQuery = !query || text.includes(query);
+
+        if (matchType && matchLow && matchQuery) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    }
+
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabButtons.forEach(b => {
+          b.className = 'px-space-md py-space-xs rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all';
+        });
+        btn.className = 'px-space-md py-space-xs rounded-lg font-label-md text-label-md transition-all bg-surface-container-lowest text-on-surface shadow-sm font-bold';
+        currentTypeFilter = btn.getAttribute('data-filter');
+        applyFilters();
+      });
+    });
+
+    // 4. Low Stock toggle chip
+    const lowStockBtn = document.getElementById('lowStockToggle');
+    if (lowStockBtn) {
+      lowStockBtn.addEventListener('click', () => {
+        lowStockOnly = !lowStockOnly;
+        if (lowStockOnly) {
+          lowStockBtn.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
+          lowStockBtn.classList.add('bg-amber-100', 'text-amber-900', 'shadow-sm', 'font-bold');
+        } else {
+          lowStockBtn.classList.remove('bg-amber-100', 'text-amber-900', 'shadow-sm', 'font-bold');
+          lowStockBtn.classList.add('bg-surface-container-low', 'text-on-surface-variant');
+        }
+        applyFilters();
+      });
+    }
+
+    // 5. Real-time Search input filter
+    const searchInput = document.getElementById('itemSearchInput');
+    if (searchInput) {
+      searchInput.addEventListener('input', applyFilters);
+    }
+  })();
+</script></main></div></body></html>

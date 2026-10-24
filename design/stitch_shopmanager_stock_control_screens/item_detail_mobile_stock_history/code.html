@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "tertiary-fixed": "#e2dfff", "surface-bright": "#faf8ff", "secondary-container": "#99efe5", "on-error": "#ffffff", "primary-fixed": "#bde9ff", "outline": "#70787d", "inverse-surface": "#283044", "on-tertiary": "#ffffff", "surface-container-low": "#f2f3ff", "on-secondary-container": "#006f67", "surface-container": "#eaedff", "error-container": "#ffdad6", "on-secondary-fixed-variant": "#00504a", "outline-variant": "#bfc8cd", "secondary": "#006a63", "surface-container-high": "#e2e7ff", "surface-tint": "#1e667f", "surface-variant": "#dae2fd", "tertiary-container": "#4a45b6", "on-surface": "#131b2e", "primary": "#004357", "on-secondary": "#ffffff", "inverse-on-surface": "#eef0ff", "on-error-container": "#93000a", "on-tertiary-fixed-variant": "#3b35a7", "surface-container-lowest": "#ffffff", "inverse-primary": "#90cfec", "on-primary-fixed": "#001f2a", "on-surface-variant": "#40484c", "tertiary": "#322a9e", "primary-fixed-dim": "#90cfec", "on-tertiary-fixed": "#0f0069", "on-background": "#131b2e", "surface": "#faf8ff", "surface-dim": "#d2d9f4", "on-secondary-fixed": "#00201d", "error": "#ba1a1a", "on-primary-fixed-variant": "#004d64", "primary-container": "#0d5c75", "surface-container-highest": "#dae2fd", "on-primary-container": "#93d3ef", "background": "#faf8ff", "secondary-fixed": "#9cf2e8", "on-tertiary-container": "#c7c5ff", "tertiary-fixed-dim": "#c3c0ff", "secondary-fixed-dim": "#80d5cb", "on-primary": "#ffffff" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "space-xs": "0.25rem", "space-lg": "1rem", "space-xl": "1.5rem", "gutter-desktop": "1.5rem", "space-md": "0.75rem", "margin-tablet": "1.5rem", "margin": "1rem", "space-sm": "0.5rem", "gutter": "1rem", "margin-desktop": "2rem" }, fontFamily: { "label-lg": ["Inter"], "body-lg": ["Inter"], "number-lg": ["Inter"], "body-sm": ["Inter"], "headline-sm": ["Inter"], "headline-lg-mobile": ["Inter"], "label-md": ["Inter"], "headline-lg": ["Inter"], "label-sm": ["Inter"], "body-md": ["Inter"], "headline-md": ["Inter"], "number-md": ["Inter"] }, fontSize: { "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }], "number-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400" }], "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "headline-lg": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "number-md": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.01em", "fontWeight": "600" }] } } } }</script><style>@layer base{html,body{width:100%;margin:0;padding:0;min-height:100vh;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-14 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm min-w-0"><button aria-label="Go Back" class="w-11 h-11 -ml-space-xs flex items-center justify-center text-on-surface hover:text-primary transition-colors focus:outline-none" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><h1 class="font-headline-md text-headline-md font-bold text-on-surface truncate">Inventory Inspection</h1></div><div class="flex items-center justify-end min-w-[44px] h-11" id="header-action-slot"></div></div></header><main class="flex flex-col flex-1 w-full bg-surface pt-14 pb-safe"><div class="flex flex-col w-full">
+<script>
+    (function injectHeaderAction() {
+      const slot = document.getElementById('header-action-slot');
+      if (slot) {
+        slot.innerHTML = `
+          <button aria-label="Edit Item" class="w-11 h-11 flex items-center justify-center text-on-surface hover:text-primary transition-colors focus:outline-none">
+            <span class="material-symbols-outlined text-[20px]">edit</span>
+          </button>
+        `;
+      }
+    })();
+  </script>
+<div class="p-margin flex flex-col gap-space-lg">
+<section class="bg-surface-container-lowest rounded-lg p-space-lg shadow-sm">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="min-w-0">
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface truncate">Polyester Yarn 30s</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Category: Yarns • Unit: kg</p>
+</div>
+<div class="flex items-center gap-1.5 flex-shrink-0">
+<span class="bg-secondary-fixed text-on-secondary-container font-label-sm text-label-sm px-2 py-0.5 rounded-full inline-flex items-center">
+            Raw Material
+          </span>
+<span class="bg-secondary-container text-on-secondary-container font-label-sm text-label-sm px-2 py-0.5 rounded-full inline-flex items-center">
+            In Stock
+          </span>
+</div>
+</div>
+<div class="my-space-md py-space-xs bg-surface-container-low/50 rounded px-space-md">
+<p class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Current Stock</p>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-number-lg text-[32px] leading-tight font-bold text-secondary">500</span>
+<span class="font-label-lg text-label-lg font-semibold text-secondary">kg</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="bg-surface-container-low p-space-sm rounded">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Minimum Stock</p>
+<p class="font-number-md text-number-md font-bold text-on-surface">150 kg</p>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Purchase Rate</p>
+<p class="font-number-md text-number-md font-bold text-on-surface">₹180 / kg</p>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Selling Rate</p>
+<p class="font-number-md text-number-md font-bold text-on-surface">₹230 / kg</p>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Stock Value</p>
+<p class="font-number-md text-number-md font-bold text-primary">₹90,000</p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm mt-space-lg">
+<button class="flex-1 h-11 bg-primary-container text-on-primary font-label-lg text-label-lg rounded flex items-center justify-center gap-1 active:bg-primary transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>Add Stock</span>
+</button>
+<button class="flex-1 h-11 bg-surface-container-lowest text-primary font-label-lg text-label-lg rounded flex items-center justify-center gap-1 active:bg-surface-container transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+<span>Adjust Stock</span>
+</button>
+</div>
+</section>
+<section class="flex flex-col">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Stock History</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">7 Transactions</span>
+</div>
+<div class="flex items-center gap-space-xs mt-space-sm mb-space-md overflow-x-auto pb-0.5">
+<button class="history-chip active h-7 px-3 rounded-full font-label-sm text-label-sm bg-primary-container text-on-primary whitespace-nowrap transition-colors" onclick="filterStockHistory('all', this)">
+          All
+        </button>
+<button class="history-chip h-7 px-3 rounded-full font-label-sm text-label-sm bg-surface-container-low text-on-surface-variant whitespace-nowrap transition-colors" onclick="filterStockHistory('in', this)">
+          Stock In
+        </button>
+<button class="history-chip h-7 px-3 rounded-full font-label-sm text-label-sm bg-surface-container-low text-on-surface-variant whitespace-nowrap transition-colors" onclick="filterStockHistory('out', this)">
+          Stock Out
+        </button>
+</div>
+<div class="flex flex-col gap-space-sm" id="history-list">
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col gap-space-xs" data-type="in">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="w-6 h-6 rounded bg-secondary-fixed text-on-secondary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[16px]">assignment_return</span>
+</span>
+<span class="font-label-md text-label-md text-on-surface truncate">Returned from Worker</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex-shrink-0">• Today, 11:30 AM</span>
+</div>
+<span class="font-number-md text-number-md font-bold text-secondary flex-shrink-0">+40 kg</span>
+</div>
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant pt-0.5">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Balance: 500 kg</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate max-w-[55%] text-right">Worker: Rajesh (Lot #402 leftover)</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col gap-space-xs" data-type="out">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="w-6 h-6 rounded bg-error-container text-on-error-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[16px]">receipt_long</span>
+</span>
+<span class="font-label-md text-label-md text-on-surface truncate">Sold in Bill</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex-shrink-0">• Yesterday</span>
+</div>
+<span class="font-number-md text-number-md font-bold text-error flex-shrink-0">−80 kg</span>
+</div>
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant pt-0.5">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Balance: 460 kg</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate max-w-[55%] text-right">Direct wholesale invoice #INV-1092</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col gap-space-xs" data-type="out">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="w-6 h-6 rounded bg-error-container text-on-error-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[16px]">outbox</span>
+</span>
+<span class="font-label-md text-label-md text-on-surface truncate">Issued to Worker</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex-shrink-0">• 24 Oct 2023</span>
+</div>
+<span class="font-number-md text-number-md font-bold text-error flex-shrink-0">−150 kg</span>
+</div>
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant pt-0.5">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Balance: 540 kg</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate max-w-[55%] text-right">Issued to Suresh Kumar for weaving</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col gap-space-xs" data-type="out">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="w-6 h-6 rounded bg-error-container text-on-error-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[16px]">trending_down</span>
+</span>
+<span class="font-label-md text-label-md text-on-surface truncate">Adjustment (Decrease)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex-shrink-0">• 22 Oct 2023</span>
+</div>
+<span class="font-number-md text-number-md font-bold text-error flex-shrink-0">−10 kg</span>
+</div>
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant pt-0.5">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Balance: 690 kg</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate max-w-[55%] text-right">Moisture &amp; dust damage correction</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col gap-space-xs" data-type="in">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="w-6 h-6 rounded bg-secondary-fixed text-on-secondary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[16px]">local_shipping</span>
+</span>
+<span class="font-label-md text-label-md text-on-surface truncate">Purchase</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex-shrink-0">• 18 Oct 2023</span>
+</div>
+<span class="font-number-md text-number-md font-bold text-secondary flex-shrink-0">+300 kg</span>
+</div>
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant pt-0.5">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Balance: 700 kg</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate max-w-[55%] text-right">Supplier: Vardhman Textiles Ltd</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col gap-space-xs" data-type="in">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="w-6 h-6 rounded bg-secondary-fixed text-on-secondary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+</span>
+<span class="font-label-md text-label-md text-on-surface truncate">Adjustment (Increase)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex-shrink-0">• 12 Oct 2023</span>
+</div>
+<span class="font-number-md text-number-md font-bold text-secondary flex-shrink-0">+20 kg</span>
+</div>
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant pt-0.5">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Balance: 400 kg</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate max-w-[55%] text-right">Physical recount audit</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col gap-space-xs" data-type="in">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="w-6 h-6 rounded bg-secondary-fixed text-on-secondary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[16px]">inventory</span>
+</span>
+<span class="font-label-md text-label-md text-on-surface truncate">Opening Stock</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex-shrink-0">• 01 Oct 2023</span>
+</div>
+<span class="font-number-md text-number-md font-bold text-secondary flex-shrink-0">+380 kg</span>
+</div>
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant pt-0.5">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Balance: 380 kg</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate max-w-[55%] text-right">System onboarding opening balance</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<script>
+    function filterStockHistory(filterType, targetButton) {
+      const chips = document.querySelectorAll('.history-chip');
+      chips.forEach(chip => {
+        chip.className = 'history-chip h-7 px-3 rounded-full font-label-sm text-label-sm bg-surface-container-low text-on-surface-variant whitespace-nowrap transition-colors';
+      });
+      targetButton.className = 'history-chip h-7 px-3 rounded-full font-label-sm text-label-sm bg-primary-container text-on-primary whitespace-nowrap transition-colors';
+
+      const items = document.querySelectorAll('#history-list > div');
+      items.forEach(item => {
+        const itemType = item.getAttribute('data-type');
+        if (filterType === 'all' || itemType === filterType) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</div></main></body></html>

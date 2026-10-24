@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "tertiary": "#692c00", "on-primary-fixed-variant": "#004d64", "secondary-fixed-dim": "#80d5cb", "on-primary": "#ffffff", "on-secondary-container": "#006f67", "on-primary-fixed": "#001f2a", "error-container": "#ffdad6", "background": "#f8f9ff", "on-primary-container": "#93d3ef", "surface-container-high": "#dce9ff", "on-secondary-fixed": "#00201d", "primary-fixed-dim": "#90cfec", "on-tertiary": "#ffffff", "secondary-fixed": "#9cf2e8", "primary-container": "#0d5c75", "on-surface-variant": "#40484c", "on-background": "#0d1c2e", "surface-variant": "#d5e3fc", "on-secondary": "#ffffff", "surface-container": "#e6eeff", "on-tertiary-fixed-variant": "#763300", "surface-container-highest": "#d5e3fc", "on-tertiary-container": "#ffbb97", "on-surface": "#0d1c2e", "inverse-surface": "#233144", "secondary-container": "#99efe5", "on-error": "#ffffff", "on-error-container": "#93000a", "surface-container-low": "#eff4ff", "on-tertiary-fixed": "#331200", "surface-tint": "#1e667f", "inverse-on-surface": "#eaf1ff", "error": "#ba1a1a", "tertiary-fixed-dim": "#ffb68e", "on-secondary-fixed-variant": "#00504a", "tertiary-container": "#8d3e00", "outline-variant": "#bfc8cd", "surface": "#f8f9ff", "inverse-primary": "#90cfec", "primary": "#004357", "outline": "#70787d", "surface-bright": "#f8f9ff", "tertiary-fixed": "#ffdbca", "secondary": "#006a63", "primary-fixed": "#bde9ff", "surface-container-lowest": "#ffffff", "surface-dim": "#ccdbf3" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "gutter": "1rem", "margin-desktop": "1.5rem", "space-xs": "0.25rem", "space-lg": "1rem", "space-md": "0.75rem", "margin": "1rem", "gutter-desktop": "1.25rem", "space-xl": "1.5rem", "space-sm": "0.5rem" }, "fontFamily": { "title-sm": ["Inter"], "financial-tabular": ["Inter"], "label-md": ["Inter"], "headline-md": ["Inter"], "body-md": ["Inter"], "financial-display": ["Inter"], "body-lg": ["Inter"], "headline-lg-mobile": ["Inter"], "label-sm": ["Inter"], "headline-lg": ["Inter"], "headline-sm": ["Inter"], "body-sm": ["Inter"], "title-md": ["Inter"] }, "fontSize": { "title-sm": ["13px", { "lineHeight": "18px", "fontWeight": "600" }], "financial-tabular": ["13px", { "lineHeight": "18px", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-md": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "financial-display": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-lg": ["15px", { "lineHeight": "22px", "fontWeight": "400" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "600" }], "headline-lg": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "title-md": ["15px", { "lineHeight": "20px", "fontWeight": "600" }] } } } }</script><style>@layer base { html, body { width: 100%; margin: 0; padding: 0; } body { overscroll-behavior-y: none; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } } ::-webkit-scrollbar { display: none; }</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body-md text-body-md min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-14 px-space-xs flex items-center justify-between"><div class="flex items-center gap-space-xs"><button aria-label="Go back" class="w-11 h-11 flex items-center justify-center text-on-surface hover:text-primary transition-colors" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><h1 class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">Create Bill</h1></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0 mr-space-md"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="bg-surface min-h-screen w-full pt-14 pb-safe flex flex-col"><div class="flex flex-col w-full">
+<!-- Status & Quick Invoice Metadata Ribbon -->
+<div class="bg-surface-container-low px-margin py-space-sm flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-outline-variant animate-pulse"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Draft #INV-2023-089</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-semibold">Unsaved Ledger</span>
+</div>
+<div class="p-margin flex flex-col gap-space-lg pb-28">
+<!-- 1. CUSTOMER SECTION -->
+<section class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<label class="font-title-sm text-title-sm text-on-surface flex items-center gap-1.5">
+<span>Customer Account</span>
+<span class="text-error font-body-md">*</span>
+</label>
+<span class="font-label-sm text-label-sm text-outline">Step 1 of 3</span>
+</div>
+<button class="w-full bg-surface-container-lowest p-space-md rounded shadow-sm flex items-center justify-between text-left hover:bg-surface-container-low transition-colors group" id="customer-select-btn" type="button">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-10 h-10 rounded bg-primary-fixed flex items-center justify-center shrink-0 text-on-primary-fixed group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">person_search</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md text-primary font-semibold truncate">Select Customer</span>
+<span class="font-body-sm text-body-sm text-outline truncate">Search by company, name or GSTIN</span>
+</div>
+</div>
+<div class="flex items-center gap-1 text-primary shrink-0">
+<span class="font-label-md text-label-md hidden sm:inline">Browse</span>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</div>
+</button>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 px-1">
+<span class="material-symbols-outlined text-[14px] text-outline">info</span>
+<span>Required to generate bill, adjust credit terms, and track outstanding ledger.</span>
+</p>
+</section>
+<!-- 2. BILL DATE -->
+<section class="flex flex-col gap-space-xs">
+<label class="font-title-sm text-title-sm text-on-surface flex items-center gap-1">
+<span>Bill Date</span>
+<span class="material-symbols-outlined text-[14px] text-outline">schedule</span>
+</label>
+<div class="relative bg-surface-container-lowest rounded shadow-sm">
+<button class="w-full h-11 px-space-md flex items-center justify-between text-left hover:bg-surface-container-low transition-colors rounded" type="button">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[18px] text-primary">calendar_today</span>
+<span class="font-title-sm text-title-sm text-on-surface">Today, 25 Oct 2023</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-medium">Standard terms</span>
+</button>
+</div>
+</section>
+<!-- 3. ITEMS SECTION -->
+<section class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<h2 class="font-title-sm text-title-sm text-on-surface">Line Items</h2>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-medium">0 Added</span>
+</div>
+<button class="h-8 px-space-md bg-secondary text-on-secondary rounded font-label-md text-label-md flex items-center gap-1 shadow-sm hover:opacity-90 transition-opacity" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Add Item</span>
+</button>
+</div>
+<!-- Empty State Card -->
+<div class="bg-surface-container-lowest p-space-xl rounded shadow-sm flex flex-col items-center justify-center text-center gap-space-sm min-h-[170px]">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[24px]">inventory_2</span>
+</div>
+<div class="flex flex-col gap-0.5 max-w-[280px]">
+<p class="font-title-sm text-title-sm text-on-surface font-semibold">No items added yet</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tap <span class="font-medium text-secondary">+ Add Item</span> to pick finished products, bulk commodities, or raw materials.</p>
+</div>
+</div>
+</section>
+<!-- 4. TOTALS CARD -->
+<section class="bg-surface-container-lowest p-space-md rounded shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-title-sm text-title-sm text-on-surface">Invoice Calculation</span>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">INR (₹)</span>
+</div>
+<div class="flex flex-col gap-space-sm text-on-surface">
+<div class="flex justify-between items-center text-body-md">
+<span class="text-on-surface-variant">Subtotal</span>
+<span class="font-financial-tabular text-financial-tabular font-medium">₹0.00</span>
+</div>
+<!-- Optional Toggles -->
+<div class="flex items-center justify-between text-body-sm pt-1">
+<button class="text-secondary hover:underline flex items-center gap-1 font-label-md text-label-md" type="button">
+<span class="material-symbols-outlined text-[16px]">add_circle</span>
+<span>Add discount</span>
+</button>
+<span class="font-financial-tabular text-financial-tabular text-outline">—</span>
+</div>
+<div class="flex items-center justify-between text-body-sm">
+<button class="text-secondary hover:underline flex items-center gap-1 font-label-md text-label-md" type="button">
+<span class="material-symbols-outlined text-[16px]">add_circle</span>
+<span>Add other charges</span>
+</button>
+<span class="font-financial-tabular text-financial-tabular text-outline">—</span>
+</div>
+<!-- Grand Total Highlight -->
+<div class="mt-space-xs pt-space-sm bg-surface-container-low p-space-sm rounded flex justify-between items-baseline">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface font-bold">Grand Total</span>
+<span class="font-label-sm text-label-sm text-outline">Incl. taxes &amp; freight</span>
+</div>
+<span class="font-financial-display text-financial-display text-on-surface font-bold">₹0.00</span>
+</div>
+<!-- Ledger Update Note -->
+<div class="flex items-start gap-1.5 p-space-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[15px] text-outline shrink-0 mt-0.5">lock_clock</span>
+<span class="font-body-sm text-body-sm">Customer ledger balance will update immediately upon saving.</span>
+</div>
+<div class="flex justify-between items-center pt-space-xs text-body-md font-medium">
+<span class="text-on-surface">Total Payable Now</span>
+<span class="font-financial-tabular text-financial-tabular text-on-surface font-semibold">₹0.00</span>
+</div>
+</div>
+</section>
+<!-- 5. PAYMENT SECTION -->
+<section class="bg-surface-container-lowest p-space-md rounded shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<h3 class="font-title-sm text-title-sm text-on-surface">Immediate Settlement</h3>
+<span class="font-label-sm text-label-sm text-outline">Optional</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">Amount Received Now</label>
+<div class="relative flex items-center">
+<span class="absolute left-3 font-title-md text-title-md text-outline">₹</span>
+<input class="w-full h-9 pl-7 pr-3 bg-surface-container-low text-on-surface font-financial-tabular text-financial-tabular rounded focus:outline-none cursor-default" readonly="" type="text" value="0"/>
+</div>
+</div>
+<!-- Payment Method Chips (Disabled/greyed out because amount is 0) -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-outline">Payment Method</label>
+<div class="grid grid-cols-3 gap-space-sm opacity-50 cursor-not-allowed">
+<div class="h-8 bg-surface-container-low rounded flex items-center justify-center gap-1 text-on-surface-variant font-label-md text-label-md select-none">
+<span class="material-symbols-outlined text-[16px]">payments</span>
+<span>Cash</span>
+</div>
+<div class="h-8 bg-surface-container-low rounded flex items-center justify-center gap-1 text-on-surface-variant font-label-md text-label-md select-none">
+<span class="material-symbols-outlined text-[16px]">qr_code_2</span>
+<span>UPI</span>
+</div>
+<div class="h-8 bg-surface-container-low rounded flex items-center justify-center gap-1 text-on-surface-variant font-label-md text-label-md select-none">
+<span class="material-symbols-outlined text-[16px]">more_horiz</span>
+<span>Other</span>
+</div>
+</div>
+</div>
+<div class="flex justify-between items-center pt-space-xs text-body-sm text-on-surface-variant">
+<span>Remaining Balance for this Bill:</span>
+<span class="font-financial-tabular text-financial-tabular font-semibold text-on-surface">₹0.00</span>
+</div>
+</section>
+<!-- 6. NOTES & TERMS -->
+<section class="bg-surface-container-lowest p-space-md rounded shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<label class="font-title-sm text-title-sm text-on-surface">Notes &amp; Operational Terms</label>
+<span class="font-label-sm text-label-sm text-outline">Optional</span>
+</div>
+<textarea class="w-full p-2.5 bg-surface-container-low rounded font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest transition-colors resize-none" placeholder="Add any notes, delivery terms, or PO number..." rows="3"></textarea>
+</section>
+</div>
+<!-- 7. FIXED BOTTOM ACTION BAR -->
+<div class="fixed bottom-0 left-0 right-0 z-40 bg-surface-container-lowest p-space-md shadow-[0_-2px_8px_rgba(0,0,0,0.06)] pb-safe">
+<div class="max-w-md mx-auto grid grid-cols-2 gap-space-md">
+<button class="h-9 px-space-md bg-surface-container-low text-on-surface-variant rounded font-title-sm text-title-sm flex items-center justify-center hover:bg-surface-container hover:text-on-surface transition-colors" onclick="history.back()" type="button">
+        Cancel
+      </button>
+<button aria-disabled="true" class="h-9 px-space-md bg-outline-variant text-surface-container-lowest rounded font-title-sm text-title-sm flex items-center justify-center opacity-60 cursor-not-allowed select-none" disabled="" type="button">
+        Save Bill
+      </button>
+</div>
+</div>
+</div></main></body></html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopManager - Tablet Landscape Navigation Shell</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+</head>
+<body class="bg-slate-200 flex items-center justify-center min-h-screen p-0 sm:p-6 text-slate-800">
+  <!-- Tablet Landscape View Container (1024px reference width) -->
+  <div class="w-full max-w-[1024px] h-[680px] bg-[#F8FAFC] flex overflow-hidden shadow-2xl sm:rounded-2xl border border-slate-300">
+    
+    <!-- LEFT SIDE NAVIGATION RAIL (Persistent, 92px width, showing all 7 sections) -->
+    <aside class="w-[92px] bg-white border-r border-slate-200 flex flex-col justify-between py-4 items-center shrink-0 z-20 shadow-xs select-none">
+      
+      <!-- Brand Logo Header -->
+      <div class="flex flex-col items-center">
+        <div class="w-11 h-11 rounded-xl overflow-hidden shadow-xs border border-slate-200/90 mb-1.5 p-0.5 bg-[#0D5C75]">
+          <img src="https://lh3.googleusercontent.com/aida/AEtjO1WW46_8IYmF9b59jYd998dUB3GhVqUh6mOXpTm0LnpogIrY-dKjCLZf21WkHfbrbppzPNIq5d2GZS3LDKY3c2ATD_AirulXZJ6v-xxEvcpPUInGbUnsLrxkTasegR5R2HwOQyvw_xYZSYvmJsfTlo7C4dua0ssSSW5XbzTneHdYp3ZuzIVq4qmSz4x0RLk6IQEK9IzKsjHITh8Pj9aad2kuOLOOKzXIQfPRbCI0gZPjEsRQ8_fRw2PwKWrW" alt="ShopManager" class="w-full h-full object-cover rounded-lg">
+        </div>
+        <span class="text-[10px] font-extrabold uppercase tracking-widest text-[#0D5C75]">ShopMgr</span>
+      </div>
+
+      <!-- Nav Items List: All 7 Required Sections in Vertical Rail -->
+      <nav class="w-full flex-1 flex flex-col items-center justify-center space-y-1.5 my-3 px-1.5">
+        
+        <!-- 1. Dashboard (ACTIVE STATE) -->
+        <a href="#dashboard" class="w-full flex flex-col items-center justify-center py-2 px-1 rounded-xl bg-teal-50/90 border border-teal-200/70 text-[#0D5C75] relative group transition">
+          <div class="absolute left-0 top-2 bottom-2 w-1 bg-[#0D5C75] rounded-r-md"></div>
+          <svg class="w-5 h-5 text-[#0D5C75]" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+          </svg>
+          <span class="text-[10px] font-bold mt-1 text-[#0D5C75] tracking-tight">Dashboard</span>
+        </a>
+
+        <!-- 2. Customers -->
+        <a href="#customers" class="w-full flex flex-col items-center justify-center py-2 px-1 rounded-xl text-slate-500 hover:text-slate-900 hover:bg-slate-100 transition group">
+          <svg class="w-5 h-5 text-slate-500 group-hover:text-slate-800 transition" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+          </svg>
+          <span class="text-[10px] font-semibold mt-1 text-slate-600 group-hover:text-slate-900 tracking-tight">Customers</span>
+        </a>
+
+        <!-- 3. Billing -->
+        <a href="#billing" class="w-full flex flex-col items-center justify-center py-2 px-1 rounded-xl text-slate-500 hover:text-slate-900 hover:bg-slate-100 transition group">
+          <svg class="w-5 h-5 text-slate-500 group-hover:text-slate-800 transition" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2zM10 8.5a.5.5 0 11-1 0 .5.5 0 011 0zm5 5a.5.5 0 11-1 0 .5.5 0 011 0z" />
+          </svg>
+          <span class="text-[10px] font-semibold mt-1 text-slate-600 group-hover:text-slate-900 tracking-tight">Billing</span>
+        </a>
+
+        <!-- 4. Stock -->
+        <a href="#stock" class="w-full flex flex-col items-center justify-center py-2 px-1 rounded-xl text-slate-500 hover:text-slate-900 hover:bg-slate-100 transition group">
+          <svg class="w-5 h-5 text-slate-500 group-hover:text-slate-800 transition" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+          </svg>
+          <span class="text-[10px] font-semibold mt-1 text-slate-600 group-hover:text-slate-900 tracking-tight">Stock</span>
+        </a>
+
+        <!-- 5. Workers -->
+        <a href="#workers" class="w-full flex flex-col items-center justify-center py-2 px-1 rounded-xl text-slate-500 hover:text-slate-900 hover:bg-slate-100 transition group">
+          <svg class="w-5 h-5 text-slate-500 group-hover:text-slate-800 transition" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 2a5 5 0 00-5 5v1H5a2 2 0 00-2 2v2h18v-2a2 2 0 00-2-2h-2V7a5 5 0 00-5-5z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 14v4a2 2 0 002 2h12a2 2 0 002-2v-4" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 2v6" />
+          </svg>
+          <span class="text-[10px] font-semibold mt-1 text-slate-600 group-hover:text-slate-900 tracking-tight">Workers</span>
+        </a>
+
+        <!-- 6. Reports -->
+        <a href="#reports" class="w-full flex flex-col items-center justify-center py-2 px-1 rounded-xl text-slate-500 hover:text-slate-900 hover:bg-slate-100 transition group">
+          <svg class="w-5 h-5 text-slate-500 group-hover:text-slate-800 transition" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+          </svg>
+          <span class="text-[10px] font-semibold mt-1 text-slate-600 group-hover:text-slate-900 tracking-tight">Reports</span>
+        </a>
+
+        <!-- 7. Settings -->
+        <a href="#settings" class="w-full flex flex-col items-center justify-center py-2 px-1 rounded-xl text-slate-500 hover:text-slate-900 hover:bg-slate-100 transition group">
+          <svg class="w-5 h-5 text-slate-500 group-hover:text-slate-800 transition" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+          <span class="text-[10px] font-semibold mt-1 text-slate-600 group-hover:text-slate-900 tracking-tight">Settings</span>
+        </a>
+
+      </nav>
+
+      <!-- Bottom Status Pill -->
+      <div class="px-2 py-1 bg-slate-100 rounded-md border border-slate-200 text-center">
+        <span class="text-[9px] font-semibold text-slate-600">v1.0.4</span>
+      </div>
+    </aside>
+
+    <!-- RIGHT MAIN CONTENT SHELL -->
+    <div class="flex-1 flex flex-col overflow-hidden bg-slate-50">
+      
+      <!-- Top App Bar -->
+      <header class="h-16 bg-white border-b border-slate-200 px-6 flex items-center justify-between shrink-0 z-10 shadow-xs">
+        <div class="flex items-center space-x-3">
+          <h1 class="text-xl font-bold text-slate-900 tracking-tight">Dashboard</h1>
+          <span class="text-xs bg-slate-100 text-slate-600 font-semibold px-2.5 py-1 rounded-md border border-slate-200">
+            Overview &amp; Production Flow
+          </span>
+        </div>
+
+        <!-- Right Side User & Business Identity -->
+        <div class="flex items-center space-x-4">
+          <div class="text-right hidden sm:block">
+            <p class="text-xs font-bold text-slate-900 leading-tight">Master Craft Workshops</p>
+            <p class="text-[11px] text-teal-700 font-medium">Logged in as Owner</p>
+          </div>
+          <button class="flex items-center space-x-2.5 p-1.5 pr-2.5 rounded-xl border border-slate-200 hover:bg-slate-50 transition active:scale-95 bg-white shadow-2xs">
+            <div class="w-8 h-8 rounded-lg bg-[#0D5C75] text-white flex items-center justify-center font-bold text-xs tracking-wider">
+              MC
+            </div>
+            <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <!-- Persistent Content Viewport -->
+      <main class="flex-1 overflow-y-auto p-6 space-y-6">
+        
+        <!-- Frame Layout Specification Banner -->
+        <div class="bg-white rounded-xl p-5 border border-slate-200 shadow-xs flex items-center justify-between">
+          <div class="space-y-1">
+            <div class="flex items-center space-x-2">
+              <span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-bold uppercase tracking-wider bg-teal-50 text-teal-800 border border-teal-200">
+                Tablet Landscape Shell (1024px)
+              </span>
+              <span class="text-xs text-slate-400">• Persistent 92px Navigation Rail</span>
+            </div>
+            <h2 class="text-base font-bold text-slate-900">Dedicated Workshop Terminal View</h2>
+            <p class="text-xs text-slate-600 max-w-2xl">
+              Provides constant 1-tap switching between raw materials, worker assignments, invoices, and performance reports without drawer friction. Built for counter-top tablets or shop floor terminals.
+            </p>
+          </div>
+          <div class="hidden lg:flex items-center space-x-2 shrink-0">
+            <div class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 text-xs font-semibold border border-slate-200">
+              Active: 1/7 (Dashboard)
+            </div>
+          </div>
+        </div>
+
+        <!-- 3-Column Business Health Metrics -->
+        <div class="grid grid-cols-3 gap-4">
+          <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs">
+            <div class="flex items-center justify-between text-xs text-slate-500 font-medium">
+              <span>Raw Materials (Stock)</span>
+              <span class="text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded font-semibold text-[11px]">Healthy</span>
+            </div>
+            <div class="text-2xl font-extrabold text-slate-900 mt-2">4,280 kg</div>
+            <p class="text-xs text-slate-500 mt-1">3 supplier deliveries pending this week</p>
+          </div>
+
+          <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs">
+            <div class="flex items-center justify-between text-xs text-slate-500 font-medium">
+              <span>Floor Workers</span>
+              <span class="text-teal-800 bg-teal-50 px-1.5 py-0.5 rounded font-semibold text-[11px]">8 Clocked In</span>
+            </div>
+            <div class="text-2xl font-extrabold text-slate-900 mt-2">12 Active Jobs</div>
+            <p class="text-xs text-slate-500 mt-1">Processing batch #89 to finished goods</p>
+          </div>
+
+          <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs">
+            <div class="flex items-center justify-between text-xs text-slate-500 font-medium">
+              <span>Billing &amp; Receivables</span>
+              <span class="text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded font-semibold text-[11px]">5 Invoices</span>
+            </div>
+            <div class="text-2xl font-extrabold text-slate-900 mt-2">$18,450</div>
+            <p class="text-xs text-slate-500 mt-1">$4,200 due within 48 hours</p>
+          </div>
+        </div>
+
+        <!-- Viewport Placeholder Canvas Area -->
+        <div class="border-2 border-dashed border-slate-300 rounded-xl p-12 flex flex-col items-center justify-center text-center bg-white/70 min-h-[220px]">
+          <div class="w-14 h-14 rounded-2xl bg-teal-50 border border-teal-200 flex items-center justify-center text-[#0D5C75] mb-3 shadow-2xs">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" />
+            </svg>
+          </div>
+          <h3 class="text-base font-bold text-slate-900">Dashboard Content Goes Here</h3>
+          <p class="text-xs text-slate-500 mt-1 max-w-md">
+            This viewport area dynamically renders each section's data and workflows (Customers, Billing invoices, Stock batches, Worker dispatch, and Financial reports) framed by the persistent 92px left rail.
+          </p>
+        </div>
+
+      </main>
+    </div>
+
+  </div>
+</body>
+</html>
